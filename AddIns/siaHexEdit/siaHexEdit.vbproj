@@ -44,8 +44,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\Be.Windows.Forms.HexBox.dll</HintPath>
     </Reference>
-    <Reference Include="ScriptIDE.Core, Version=4.2.0.0, Culture=neutral, processorArchitecture=x86" />
-    <Reference Include="siaIDEMain, Version=4.2.1.0, Culture=neutral, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -63,7 +61,7 @@
     </Reference>
     <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.1.32294, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\scriptHost06\scriptHostLib\bin\Release\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <HintPath>..\..\references\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +93,7 @@
       <DependentUpon>frmDC_hexEdit.vb</DependentUpon>
     </Compile>
     <Compile Include="frmDC_hexEdit.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -149,6 +148,16 @@
     <Content Include="siaHexEdit.AddIn">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Main\ScriptIDE.Base\ScriptIDE.Main.vbproj">
+      <Project>{8503937E-4512-49B8-B2A0-BBB58C2E35E0}</Project>
+      <Name>ScriptIDE.Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Main\ScriptIDE.Core\ScriptIDE.Core.vbproj">
+      <Project>{7A976981-ED3E-403D-8968-8B0CCE38137B}</Project>
+      <Name>ScriptIDE.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
