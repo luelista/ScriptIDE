@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddIn name        = "siaIndexList"
+       displayname = "IndexList"
+       author      = "Max Weller"
+       url         = "http://teamwiki.net/"
+       description = "Indexliste"
+       icon        = "siaIndexList.ACCICONS_105.ico">
+
+  <Manifest>
+    <!-- unique name of the AddIn, used when others AddIns want to reference this AddIn -->
+    <Identity name="ScriptIDE3.siaIndexList" version = "@EntryAssemblyVersion"/>
+    <!--
+		others AddIns can specify dependencies like this:
+		<Dependency addin="ICSharpCode.Core.Demo" version="1.0.0.x-1.0.0.y"/>
+		-->
+  </Manifest>
+
+  <Runtime>
+    <Import assembly="siaIndexList.dll"/>
+  </Runtime>
+
+  <Path name="/Workspace/IndexList">
+    <Class id="VBNetIndexList" filefilter="*.vb;*.vbs;*.nsv;*.nsvb;*.nsa;*.nsm" class="siaIndexList.idx_test01" insertbefore="Default" />
+
+  </Path>
+
+  <Path name="/OptionsDialog/Pages">
+    <Class id="IndexListOptions" class="siaIndexList.prop_indexList"
+               path="Editoren/Indexliste_demo"
+               name="Indexliste_demo" icon="http://mw.teamwiki.net/docs/img/win-icons/explorer_1_101-32.png" />
+
+  </Path>
+
+
+
+</AddIn>

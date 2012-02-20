@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddIn name        = "siaCodeCompiler"
+       displayname = "CodeCompiler"
+       author      = "Max Weller"
+       url         = "http://scriptide.teamwiki.net/addins/siacodecompiler.html"
+       description = "Adds Script Host functionality to the ScriptIDE"
+       icon        = "siaCodeCompiler.SHELL32_275.ico">
+
+  <Manifest>
+    <!-- unique name of the AddIn, used when others AddIns want to reference this AddIn -->
+    <Identity name="ScriptIDE3.siaCodeCompiler" version = "@EntryAssemblyVersion"/>
+    <!--
+		others AddIns can specify dependencies like this:
+		<Dependency addin="ICSharpCode.Core.Demo" version="1.0.0.x-1.0.0.y"/>
+		-->
+  </Manifest>
+
+  <Runtime>
+    <Import assembly="siaCodeCompiler.dll"/>
+  </Runtime>
+  
+  <Path name="/Workspace/MainMenu/Window"> <!-- Ansicht -->
+    <MenuSeparator />
+    <MenuItem refid="Window.Reflection" />
+    <MenuItem refid="Window.SHDebug" />
+    <MenuItem refid="Window.SHCompilerErrors" />
+    <MenuItem refid="Window.SHPrintline" />
+  </Path>
+
+  <Path name="/Workspace/MainMenu">
+    <MenuItem id="ScriptDebug" text="&#38;Script" insertbefore="Tools">
+      <MenuItem refid="Window.SHDebug" text="Debugfenster anzeigen" />
+      <MenuSeparator />
+      <MenuItem refid="Debug.Compile" />
+      <MenuItem refid="Debug.Run" />
+      <MenuItem refid="Debug.Stop" />
+      <MenuItem refid="Debug.Info" />
+      <!--MenuItem refid="Debug.ModeLbl" /-->
+      <MenuItem refid="Debug.OpenExplorer" />
+    </MenuItem>
+
+  </Path>
+  
+  <Path name="/Workspace/ToolWindows">
+    <ToolWindow id="EXEDebuggingInformation" name="Prozessinformation" dockhint="Float" class="siaCodeCompiler.frm_exedebugging" />
+    <ToolWindow id="ReflectionInfo" name="Reflection" dockhint="Right" class="siaCodeCompiler.frmTB_infoTips" />
+    <ToolWindow id="SHDebug" name="ScriptHost Debug" dockhint="Bottom" class="scriptHostLib.frmTB_debug" />
+    <ToolWindow id="SHCompilerErrors" name="ScriptHost Compiler Errors" dockhint="Bottom" class="scriptHostLib.frmTB_compileErrors" />
+    <ToolWindow id="SHPrintline" name="ScriptHost Print Lines Window" dockhint="Bottom" class="scriptHostLib.frmTB_tracePrintLine" />
+  </Path>
+
+  <Path name="/Workspace/Toolbars">
+    <!-- Ein Prozentzeichen hinter dem Namen setzt die Standardansicht auf Icon+Text
+    (sonst nur Icon, wenn vorhanden, oder nur Text, wenn vorhanden, oder nur ID) -->
+    <DefaultView id="DebugToolbar">Debug.Compile% Debug.Run% Debug.Stop Debug.ModeLbl | Debug.Info Debug.OpenExplorer Window.Console</DefaultView>
+  </Path>
+  
+  <Path name="/Workspace/ToolbarCommands">
+    
+
+    <Command id="Debug.ScriptCallback" text="ScriptCallback" flags="SKIPMENU REQUIREPARA" icon="" />
+
+    <Command id="Window.Reflection" text="Reflection" icon="http://mw.teamwiki.net/docs/img/win-icons/VB6_1210-16.png" />
+    <Command id="Reflection.Lookup" text="Wort unter Cursor suchen" icon="http://mw.teamwiki.net/docs/img/win-icons/ObjectSearch.png" />
+
+    <Command id="Window.SHDebug" text="ScriptHost" defkey="MainWindow, F2" icon="http://mw.teamwiki.net/docs/img/win-icons/Microsoft_532-16.png" />
+    <Command id="Window.SHCompilerErrors" text="Fehlerliste" icon="http://mw.teamwiki.net/docs/img/win-icons/ieframe_36867-16.png" />
+    <Command id="Window.SHPrintline" text="Printline-Ausgabe" icon="http://mw.teamwiki.net/docs/img/win-icons/ACCICONS_105-16.png" />
+
+    <Command id="Debug.Compile" text="Kompilieren" defkey="TextEditor, CTRL-F5" icon="http://mw.teamwiki.net/docs/img/icons/build.png" />
+    <Command id="Debug.Run" text="Debuggen" defkey="TextEditor, F5" icon="http://mw.teamwiki.net/docs/img/win-icons/debug-run.png" />
+    <Command id="Debug.Stop" text="Stop" defkey="TextEditor, ALT-Pause" icon="http://mw.teamwiki.net/docs/img/win-icons/debug-stop.png" />
+    <Command id="Debug.Info" text="Debug-Informationen" icon="http://mw.teamwiki.net/docs/img/win-icons/msinfo32_128-16.png" />
+    <Command id="Debug.OpenExplorer" text="Explorer &#246;ffnen" icon="http://mw.teamwiki.net/docs/img/win-icons/explorer_101-16.png" />
+
+    <Command id="Debug.LoadScriptAddin" text="Init Addin" icon="http://mw.teamwiki.net/docs/img/win-icons/build.png" />
+
+  </Path>
+
+  <Path name="/Workspace/FileCommands/vb.cs.nsv.nsc.nsa">
+    <ToolSeparator />
+    <ToolButton refid="Debug.Compile" />
+    <ToolButton refid="Debug.Run" />
+    <ToolButton refid="Debug.Stop" />
+    <ToolSeparator />
+    <ToolButton refid="Debug.Info" text="Info" />
+    <ToolLabel id="Debug.ModeLbl" text="Ready" icon="" />
+    <ToolButton refid="Debug.OpenExplorer" text="Explorer" />
+    <ToolSeparator />
+
+  </Path>
+
+  <Path name="/Workspace/FileCommands/nsa">
+    <ToolButton refid="Debug.LoadScriptAddin" />
+
+  </Path>
+
+  <Path name="/OptionsDialog/Pages">
+    <Class id="ScriptAddins" class="siaCodeCompiler.prop_scriptAddins"
+               path="Erweiterungen/Script-Add-ins"
+               name="Skript-Add-ins" icon="http://mw.teamwiki.net/docs/img/win-icons/vsmacros_214-32.png" />
+
+    <Class id="SkriptClsAutorun" class="siaCodeCompiler.prop_autorunClasses"
+           path="Script-Host/Autostart"
+           name="Skripte automatisch laden" icon="http://mw.teamwiki.net/docs/img/win-icons/Procmon_101-32.png" />
+
+    <Class id="ScriptSearchPath" class="siaCodeCompiler.prop_searchPath"
+               path="Script-Host/Suchpfad"
+               name="Script-Suchpfade" icon="http://mw.teamwiki.net/docs/img/win-icons/explorer_1_101-32.png" />
+
+  </Path>
+
+  <Path name="/Core/Interproc/Commands">
+    <CMD id="NavigateScriptClassLine" parameters="className?lineNr" help="internal, used by trace monitor only"/>
+
+  </Path>
+
+
+</AddIn>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddIn name        = "siaScriptSyncMini"
+       displayname = "ScriptSyncMini"
+       author      = "Max Weller"
+       url         = "http://www.codeproject.com/TBD"
+       description = "Up- and download of arbitrary files via the MWupd3-Service">
+
+  <Manifest>
+    <!-- unique name of the AddIn, used when others AddIns want to reference this AddIn -->
+    <Identity name="ScriptIDE3.siaScriptSyncMini" version = "@EntryAssemblyVersion"/>
+    <!--
+		others AddIns can specify dependencies like this:
+		<Dependency addin="ICSharpCode.Core.Demo" version="1.0.0.x-1.0.0.y"/>
+		-->
+  </Manifest>
+
+  <Runtime>
+    <Import assembly="siaScriptSyncMini.dll"/>
+  </Runtime>
+
+  <Path name="/Workspace/ToolWindows">
+    <ToolWindow id="ScriptSyncMini" name="Script Sync Window"
+           dockhint="Right" class="siaScriptSyncMini.frmTB_scriptSync" />
+  </Path>
+
+  <Path name="/Workspace/MainMenu/Window">
+      <MenuItem refid="Window.ScriptSync" text="Dateiliste f&#252;r ScriptSync" />
+  </Path>
+
+  <Path name="/Workspace/ToolbarCommands">
+    <Toolbaritem id="Window.ScriptSync" text="Sync" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/CSCDLL_143-16.png" />
+    
+  </Path>
+  
+  <Path name="/OptionsDialog/SkinObjects">
+    <SkinObject id="ScriptSync" addinname="siaScriptSyncMini" />
+
+  </Path>
+
+
+
+</AddIn>

@@ -1,0 +1,217 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ScriptIDE.Core", "Main\ScriptIDE.Core\ScriptIDE.Core.vbproj", "{7A976981-ED3E-403D-8968-8B0CCE38137B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ScriptIDE.Main", "Main\ScriptIDE.Base\ScriptIDE.Main.vbproj", "{8503937E-4512-49B8-B2A0-BBB58C2E35E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Main Application", "Main Application", "{D362802B-358A-46B3-A7BC-EBA032DBF18F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NET Scripting", "NET Scripting", "{97A538DE-6B26-40DC-AF15-BC69EEEA05A3}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "scriptHostLib", "Main\scriptHostLib\scriptHostLib.vbproj", "{E47A3E06-C90C-44B9-9DC5-F113D8ADD9AC}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "scriptRuntimeHost", "Main\scriptRuntimeHost\scriptRuntimeHost.vbproj", "{E93F08DB-7F03-4D70-AA3D-90925F8B6B6C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "scriptRuntimeLib", "AddIns\scriptHelperLib\scriptRuntimeLib.vbproj", "{23B3327A-18B5-427E-A2F1-95FC4DCA8A7E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ScriptIDE.ScriptWindowHelper", "Main\ScriptIDE.ScriptWindowHelper\ScriptIDE.ScriptWindowHelper.vbproj", "{6AB31434-4937-43F3-AF14-F3B0B21CA716}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lua Scripting", "Lua Scripting", "{0F4C42D5-6027-41B3-A1A8-B41AA3EFCE47}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "luaDebugHost", "Main\luaDebugHost\luaDebugHost.vbproj", "{BD957896-BF55-4902-916E-A9EF58CAC25D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other Addins", "Other Addins", "{D40B63A1-C110-40A8-814A-566AFB8CFF69}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "siaFormDesigner", "AddIns\siaFormDesigner\siaFormDesigner.vbproj", "{172B9A42-E6BA-4E9D-A520-A5EBD1E3E698}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "siaGridView", "AddIns\siaGridView\siaGridView.vbproj", "{5005B139-AEE6-4CC0-8605-C15B9C67666D}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "siaHexEdit", "AddIns\siaHexEdit\siaHexEdit.vbproj", "{E433BACD-E0C4-4ECB-BF86-D795BD04E0C1}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "siaCodeCompiler", "AddIns\siaCodeCompiler\siaCodeCompiler.vbproj", "{BDFAF73E-6DE6-476E-8E7C-7F0D06A77A2D}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "siaIndexList", "AddIns\siaIndexList\siaIndexList.vbproj", "{DE8EC5E0-D0D7-42C7-8D39-E5C73F64B1DC}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "siaRTF", "AddIns\siaRTF\siaRTF.vbproj", "{0523FB23-3C38-4D53-AB74-3D12F667CAD1}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "siaScriptSyncMini", "AddIns\siaScriptSyncMini\siaScriptSyncMini.vbproj", "{27F4B26E-085F-4887-B0B3-FBAF863C979D}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "siaSolution", "AddIns\siaSolution\siaSolution.vbproj", "{D72B4377-2308-41EB-BEB5-49FE2C66BC3B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "siaSkinnable", "AddIns\siaSkinnable\siaSkinnable.vbproj", "{FD2BC066-DBD8-4D22-AAAA-A8F0BE332519}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "StartUp", "Main\ScriptIDE.StartUp\StartUp.vbproj", "{EE581313-310C-4D2F-92C9-E862E593B51C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 18
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/TFS36
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AddIns\\scriptHelperLib\\scriptRuntimeLib.vbproj
+		SccProjectTopLevelParentUniqueName1 = ScriptIDE.sln
+		SccProjectName1 = AddIns/scriptHelperLib
+		SccLocalPath1 = AddIns\\scriptHelperLib
+		SccProjectUniqueName2 = AddIns\\siaCodeCompiler\\siaCodeCompiler.vbproj
+		SccProjectTopLevelParentUniqueName2 = ScriptIDE.sln
+		SccProjectName2 = AddIns/siaCodeCompiler
+		SccLocalPath2 = AddIns\\siaCodeCompiler
+		SccProjectUniqueName3 = AddIns\\siaFormDesigner\\siaFormDesigner.vbproj
+		SccProjectTopLevelParentUniqueName3 = ScriptIDE.sln
+		SccProjectName3 = AddIns/siaFormDesigner
+		SccLocalPath3 = AddIns\\siaFormDesigner
+		SccProjectUniqueName4 = AddIns\\siaGridView\\siaGridView.vbproj
+		SccProjectTopLevelParentUniqueName4 = ScriptIDE.sln
+		SccProjectName4 = AddIns/siaGridView
+		SccLocalPath4 = AddIns\\siaGridView
+		SccProjectUniqueName5 = AddIns\\siaHexEdit\\siaHexEdit.vbproj
+		SccProjectTopLevelParentUniqueName5 = ScriptIDE.sln
+		SccProjectName5 = AddIns/siaHexEdit
+		SccLocalPath5 = AddIns\\siaHexEdit
+		SccProjectUniqueName6 = AddIns\\siaIndexList\\siaIndexList.vbproj
+		SccProjectTopLevelParentUniqueName6 = ScriptIDE.sln
+		SccProjectName6 = AddIns/siaIndexList
+		SccLocalPath6 = AddIns\\siaIndexList
+		SccProjectUniqueName7 = AddIns\\siaRTF\\siaRTF.vbproj
+		SccProjectTopLevelParentUniqueName7 = ScriptIDE.sln
+		SccProjectName7 = AddIns/siaRTF
+		SccLocalPath7 = AddIns\\siaRTF
+		SccProjectUniqueName8 = AddIns\\siaScriptSyncMini\\siaScriptSyncMini.vbproj
+		SccProjectTopLevelParentUniqueName8 = ScriptIDE.sln
+		SccProjectName8 = AddIns/siaScriptSyncMini
+		SccLocalPath8 = AddIns\\siaScriptSyncMini
+		SccProjectUniqueName9 = AddIns\\siaSkinnable\\siaSkinnable.vbproj
+		SccProjectTopLevelParentUniqueName9 = ScriptIDE.sln
+		SccProjectName9 = AddIns/siaSkinnable
+		SccLocalPath9 = AddIns\\siaSkinnable
+		SccProjectUniqueName10 = AddIns\\siaSolution\\siaSolution.vbproj
+		SccProjectTopLevelParentUniqueName10 = ScriptIDE.sln
+		SccProjectName10 = AddIns/siaSolution
+		SccLocalPath10 = AddIns\\siaSolution
+		SccProjectUniqueName11 = Main\\luaDebugHost\\luaDebugHost.vbproj
+		SccProjectTopLevelParentUniqueName11 = ScriptIDE.sln
+		SccProjectName11 = Main/luaDebugHost
+		SccLocalPath11 = Main\\luaDebugHost
+		SccProjectUniqueName12 = Main\\scriptHostLib\\scriptHostLib.vbproj
+		SccProjectTopLevelParentUniqueName12 = ScriptIDE.sln
+		SccProjectName12 = Main/scriptHostLib
+		SccLocalPath12 = Main\\scriptHostLib
+		SccProjectUniqueName13 = Main\\ScriptIDE.Base\\ScriptIDE.Main.vbproj
+		SccProjectTopLevelParentUniqueName13 = ScriptIDE.sln
+		SccProjectName13 = Main/ScriptIDE.Base
+		SccLocalPath13 = Main\\ScriptIDE.Base
+		SccProjectUniqueName14 = Main\\ScriptIDE.Core\\ScriptIDE.Core.vbproj
+		SccProjectTopLevelParentUniqueName14 = ScriptIDE.sln
+		SccProjectName14 = Main/ScriptIDE.Core
+		SccLocalPath14 = Main\\ScriptIDE.Core
+		SccProjectUniqueName15 = Main\\ScriptIDE.ScriptWindowHelper\\ScriptIDE.ScriptWindowHelper.vbproj
+		SccProjectTopLevelParentUniqueName15 = ScriptIDE.sln
+		SccProjectName15 = Main/ScriptIDE.ScriptWindowHelper
+		SccLocalPath15 = Main\\ScriptIDE.ScriptWindowHelper
+		SccProjectUniqueName16 = Main\\ScriptIDE.StartUp\\StartUp.vbproj
+		SccProjectTopLevelParentUniqueName16 = ScriptIDE.sln
+		SccProjectName16 = Main/ScriptIDE.StartUp
+		SccLocalPath16 = Main\\ScriptIDE.StartUp
+		SccProjectUniqueName17 = Main\\scriptRuntimeHost\\scriptRuntimeHost.vbproj
+		SccProjectTopLevelParentUniqueName17 = ScriptIDE.sln
+		SccProjectName17 = Main/scriptRuntimeHost
+		SccLocalPath17 = Main\\scriptRuntimeHost
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A976981-ED3E-403D-8968-8B0CCE38137B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A976981-ED3E-403D-8968-8B0CCE38137B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A976981-ED3E-403D-8968-8B0CCE38137B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A976981-ED3E-403D-8968-8B0CCE38137B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8503937E-4512-49B8-B2A0-BBB58C2E35E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8503937E-4512-49B8-B2A0-BBB58C2E35E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8503937E-4512-49B8-B2A0-BBB58C2E35E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8503937E-4512-49B8-B2A0-BBB58C2E35E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E47A3E06-C90C-44B9-9DC5-F113D8ADD9AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E47A3E06-C90C-44B9-9DC5-F113D8ADD9AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E47A3E06-C90C-44B9-9DC5-F113D8ADD9AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E47A3E06-C90C-44B9-9DC5-F113D8ADD9AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E93F08DB-7F03-4D70-AA3D-90925F8B6B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E93F08DB-7F03-4D70-AA3D-90925F8B6B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E93F08DB-7F03-4D70-AA3D-90925F8B6B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E93F08DB-7F03-4D70-AA3D-90925F8B6B6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B3327A-18B5-427E-A2F1-95FC4DCA8A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B3327A-18B5-427E-A2F1-95FC4DCA8A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B3327A-18B5-427E-A2F1-95FC4DCA8A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B3327A-18B5-427E-A2F1-95FC4DCA8A7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB31434-4937-43F3-AF14-F3B0B21CA716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB31434-4937-43F3-AF14-F3B0B21CA716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB31434-4937-43F3-AF14-F3B0B21CA716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB31434-4937-43F3-AF14-F3B0B21CA716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172B9A42-E6BA-4E9D-A520-A5EBD1E3E698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172B9A42-E6BA-4E9D-A520-A5EBD1E3E698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172B9A42-E6BA-4E9D-A520-A5EBD1E3E698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172B9A42-E6BA-4E9D-A520-A5EBD1E3E698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5005B139-AEE6-4CC0-8605-C15B9C67666D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5005B139-AEE6-4CC0-8605-C15B9C67666D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5005B139-AEE6-4CC0-8605-C15B9C67666D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5005B139-AEE6-4CC0-8605-C15B9C67666D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E433BACD-E0C4-4ECB-BF86-D795BD04E0C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E433BACD-E0C4-4ECB-BF86-D795BD04E0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E433BACD-E0C4-4ECB-BF86-D795BD04E0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E433BACD-E0C4-4ECB-BF86-D795BD04E0C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDFAF73E-6DE6-476E-8E7C-7F0D06A77A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFAF73E-6DE6-476E-8E7C-7F0D06A77A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFAF73E-6DE6-476E-8E7C-7F0D06A77A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFAF73E-6DE6-476E-8E7C-7F0D06A77A2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8EC5E0-D0D7-42C7-8D39-E5C73F64B1DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8EC5E0-D0D7-42C7-8D39-E5C73F64B1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8EC5E0-D0D7-42C7-8D39-E5C73F64B1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8EC5E0-D0D7-42C7-8D39-E5C73F64B1DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0523FB23-3C38-4D53-AB74-3D12F667CAD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0523FB23-3C38-4D53-AB74-3D12F667CAD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0523FB23-3C38-4D53-AB74-3D12F667CAD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0523FB23-3C38-4D53-AB74-3D12F667CAD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F4B26E-085F-4887-B0B3-FBAF863C979D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F4B26E-085F-4887-B0B3-FBAF863C979D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F4B26E-085F-4887-B0B3-FBAF863C979D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F4B26E-085F-4887-B0B3-FBAF863C979D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D72B4377-2308-41EB-BEB5-49FE2C66BC3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D72B4377-2308-41EB-BEB5-49FE2C66BC3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D72B4377-2308-41EB-BEB5-49FE2C66BC3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D72B4377-2308-41EB-BEB5-49FE2C66BC3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD2BC066-DBD8-4D22-AAAA-A8F0BE332519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2BC066-DBD8-4D22-AAAA-A8F0BE332519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD2BC066-DBD8-4D22-AAAA-A8F0BE332519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2BC066-DBD8-4D22-AAAA-A8F0BE332519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE581313-310C-4D2F-92C9-E862E593B51C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE581313-310C-4D2F-92C9-E862E593B51C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE581313-310C-4D2F-92C9-E862E593B51C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE581313-310C-4D2F-92C9-E862E593B51C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7A976981-ED3E-403D-8968-8B0CCE38137B} = {D362802B-358A-46B3-A7BC-EBA032DBF18F}
+		{8503937E-4512-49B8-B2A0-BBB58C2E35E0} = {D362802B-358A-46B3-A7BC-EBA032DBF18F}
+		{EE581313-310C-4D2F-92C9-E862E593B51C} = {D362802B-358A-46B3-A7BC-EBA032DBF18F}
+		{E47A3E06-C90C-44B9-9DC5-F113D8ADD9AC} = {97A538DE-6B26-40DC-AF15-BC69EEEA05A3}
+		{E93F08DB-7F03-4D70-AA3D-90925F8B6B6C} = {97A538DE-6B26-40DC-AF15-BC69EEEA05A3}
+		{23B3327A-18B5-427E-A2F1-95FC4DCA8A7E} = {97A538DE-6B26-40DC-AF15-BC69EEEA05A3}
+		{6AB31434-4937-43F3-AF14-F3B0B21CA716} = {97A538DE-6B26-40DC-AF15-BC69EEEA05A3}
+		{BDFAF73E-6DE6-476E-8E7C-7F0D06A77A2D} = {97A538DE-6B26-40DC-AF15-BC69EEEA05A3}
+		{BD957896-BF55-4902-916E-A9EF58CAC25D} = {0F4C42D5-6027-41B3-A1A8-B41AA3EFCE47}
+		{172B9A42-E6BA-4E9D-A520-A5EBD1E3E698} = {D40B63A1-C110-40A8-814A-566AFB8CFF69}
+		{5005B139-AEE6-4CC0-8605-C15B9C67666D} = {D40B63A1-C110-40A8-814A-566AFB8CFF69}
+		{E433BACD-E0C4-4ECB-BF86-D795BD04E0C1} = {D40B63A1-C110-40A8-814A-566AFB8CFF69}
+		{DE8EC5E0-D0D7-42C7-8D39-E5C73F64B1DC} = {D40B63A1-C110-40A8-814A-566AFB8CFF69}
+		{0523FB23-3C38-4D53-AB74-3D12F667CAD1} = {D40B63A1-C110-40A8-814A-566AFB8CFF69}
+		{27F4B26E-085F-4887-B0B3-FBAF863C979D} = {D40B63A1-C110-40A8-814A-566AFB8CFF69}
+		{D72B4377-2308-41EB-BEB5-49FE2C66BC3B} = {D40B63A1-C110-40A8-814A-566AFB8CFF69}
+		{FD2BC066-DBD8-4D22-AAAA-A8F0BE332519} = {D40B63A1-C110-40A8-814A-566AFB8CFF69}
+	EndGlobalSection
+EndGlobal

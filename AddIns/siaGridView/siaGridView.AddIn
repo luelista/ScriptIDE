@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddIn name        = "siaGridView"
+       displayname = "GridView"
+       author      = "Max Weller"
+       url         = "http://www.max-weller.de/sia/gridview.html"
+       description = "Displays tables with IGrid">
+
+  <Manifest>
+    <!-- unique name of the AddIn, used when others AddIns want to reference this AddIn -->
+    <Identity name="ScriptIDE3.siaGridView" version = "@EntryAssemblyVersion"/>
+    <!--
+		others AddIns can specify dependencies like this:
+		<Dependency addin="ICSharpCode.Core.Demo" version="1.0.0.x-1.0.0.y"/>
+		-->
+  </Manifest>
+
+  <Runtime>
+    <Import assembly="siaGridView.dll"/>
+  </Runtime>
+  
+  <Path name="/Workspace/ContentViewers">
+    <Class id="GridView" mode="dockcontent" filefilter="*.grid"
+           class="siaGridView.frmDC_gridView" insertbefore="Default" />
+    
+  </Path>
+
+
+  <Path name="/Workspace/MainMenu/File">
+    <MenuSeparator id="grp3" insertbefore="opengrid" />
+    <MenuItem refid="File.OpenGrid" id="opengrid" insertbefore="grp1" />
+  </Path>
+  
+  <Path name="/Workspace/ToolbarCommands">
+    <Toolbaritem id="File.OpenGrid" text="Grid-Datei &#246;ffnen ..." kind="Button" icon="" />
+    
+  </Path>
+  
+</AddIn>

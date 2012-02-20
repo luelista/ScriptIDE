@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A976981-ED3E-403D-8968-8B0CCE38137B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ScriptIDE.Core</RootNamespace>
+    <AssemblyName>ScriptIDE.Core</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>ScriptIDE.Core.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>ScriptIDE.Core.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LuaDebugger, Version=0.1.0.19270, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\LuaDebugger.dll</HintPath>
+    </Reference>
+    <Reference Include="LuaInterface, Version=2.0.0.19270, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\LuaInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ManagedWinapi, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\yEXE\ManagedWinapi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TeamSystem.Data.UnitTesting, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.Vsa" />
+    <Reference Include="MWupd3.UpdateCheck, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\yEXE\MWupd3.UpdateCheck.dll</HintPath>
+    </Reference>
+    <Reference Include="ScintillaNet, Version=2.2.3614.35512, Culture=neutral, PublicKeyToken=948d6c9751444115, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\ScintillaNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TenTec.Windows.iGridLib.iGrid, Version=2.50.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\TenTec.Windows.iGridLib.iGrid.DLL</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.1.32294, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="WeifenLuo.WinFormsUI.Docking" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddinManagement\AddInLoadException.vb" />
+    <Compile Include="AddinManagement\AddInTree.vb" />
+    <Compile Include="AddinManagement\AddInTreeNode.vb" />
+    <Compile Include="AddinManagement\frm_ProtocolOpenAsDialog.Designer.vb">
+      <DependentUpon>frm_ProtocolOpenAsDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddinManagement\frm_ProtocolOpenAsDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddinManagement\ProtocolService.vb" />
+    <Compile Include="AddinManagement\cls_addinHelper.vb" />
+    <Compile Include="AddinManagement\Codon.vb" />
+    <Compile Include="AddinManagement\Doozers\ClassDoozer.vb" />
+    <Compile Include="AddinManagement\Doozers\LuaClassDoozer.vb" />
+    <Compile Include="AddinManagement\Doozers\InterprocCommandDoozer.vb" />
+    <Compile Include="AddinManagement\Doozers\IBuildItemsModifier.vb" />
+    <Compile Include="AddinManagement\Doozers\IDoozer.vb" />
+    <Compile Include="AddinManagement\Doozers\IncludeDoozer.vb" />
+    <Compile Include="AddinManagement\Doozers\LazyDoozer.vb" />
+    <Compile Include="AddinManagement\ExtensionPath.vb" />
+    <Compile Include="AddinManagement\frm_newAddinsFound.Designer.vb">
+      <DependentUpon>frm_newAddinsFound.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddinManagement\frm_newAddinsFound.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddinManagement\Properties.vb" />
+    <Compile Include="app_interprocHandler.vb" />
+    <Compile Include="Enums.vb" />
+    <Compile Include="IgridEx.Designer.vb">
+      <DependentUpon>IgridEx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IgridEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interfaces\HandlerIfaces.vb" />
+    <Compile Include="Interfaces\IAddinConnect.vb" />
+    <Compile Include="Interfaces\IDockContentForm.vb" />
+    <Compile Include="Interfaces\IIDEHelper.vb" />
+    <Compile Include="Interfaces\IScriptedPanel.vb" />
+    <Compile Include="Interfaces\IScriptedWindow.vb" />
+    <Compile Include="Interfaces\IScriptHelper.vb" />
+    <Compile Include="Interfaces\ISkinnable.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ParaService.vb" />
+    <Compile Include="ScriptEventArgs.vb" />
+    <Compile Include="SysModules\app_comViewer.vb" />
+    <Compile Include="SysModules\cls_globPara.vb" />
+    <Compile Include="SysModules\CommandLineParser.vb" />
+    <Compile Include="SysModules\ComObjectHelpers.vb" />
+    <Compile Include="SysModules\FormBorder.vb" />
+    <Compile Include="SysModules\StringHelper.vb" />
+    <Compile Include="SysModules\sys_getAsyncKeyState.vb" />
+    <Compile Include="SysModules\sys_IconFromFileExt.vb" />
+    <Compile Include="SysModules\sys_IGridReadSave.vb" />
+    <Compile Include="SysModules\ResourceLoader.vb" />
+    <Compile Include="SysModules\sys_interproc.vb" />
+    <Compile Include="SysModules\sys_mwRegistry.vb" />
+    <Compile Include="SysModules\sys_toolstripDontEatClicks.vb" />
+    <Compile Include="SysModules\TraceClass.vb" />
+    <Compile Include="SysModules\sys_windowMessages.vb" />
+    <Compile Include="SysModules\TwAjax.vb" />
+    <Compile Include="SysModules\WinInet.vb" />
+    <Compile Include="toolstripRenderers\Office2007ColorTable.vb" />
+    <Compile Include="toolstripRenderers\Office2007Helpers.vb" />
+    <Compile Include="toolstripRenderers\Office2007Renderer.vb" />
+    <Compile Include="toolstripRenderers\ToolstripRendererService.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddinManagement\frm_newAddinsFound.resx">
+      <DependentUpon>frm_newAddinsFound.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddinManagement\frm_ProtocolOpenAsDialog.resx">
+      <DependentUpon>frm_ProtocolOpenAsDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invalidicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

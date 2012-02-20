@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddIn name        = "siaRTF"
+       displayname = "RTF"
+       author      = "Max Weller"
+       url         = "http://www.codeproject.com/TBD"
+       description = "Procotol handler for TwAjax, adds ContentViewer for Rich Text Format">
+
+  <Manifest>
+    <!-- unique name of the AddIn, used when others AddIns want to reference this AddIn -->
+    <Identity name="ScriptIDE3.siaRTF" version = "@EntryAssemblyVersion"/>
+    <!--
+		others AddIns can specify dependencies like this:
+		<Dependency addin="ICSharpCode.Core.Demo" version="1.0.0.x-1.0.0.y"/>
+		-->
+  </Manifest>
+
+  <Runtime>
+    <Import assembly="siaRTF.dll"/>
+  </Runtime>
+
+  <Path name="/Workspace/ProtocolHandlers">
+    <Class id="TwAjax" protocol="twajax:" class="siaRTF.TwAjaxHandler" />
+  </Path>
+
+  <Path name="/Workspace/ToolWindows">
+    <ToolWindow id="TwAjaxBrowser" name="TwAjax Browser" dockhint="Right" class="siaRTF.frmTB_rtfFilelist" />
+  </Path>
+
+  <Path name="/OptionsDialog/Pages">
+    <Class id="TwAjaxProtocolOptions" class="siaRTF.ctl_options"
+           path="Protokolle/TwAjax"
+           name="TwAjax-Protokoll" />
+
+    <Class id="RTFEditOptions" class="siaRTF.ctl_options"
+           path="Editoren/RTF"
+           name="Rich Text Box" icon="http://mw.teamwiki.net/docs/img/win-icons/wordicon_201-32.png" />
+
+  </Path>
+
+  <Path name="/Workspace/ContentViewers">
+    <Class id="RTF" mode="dockcontent" filefilter="*.rtf;*.zrtf"
+           class="siaRTF.frmDC_rtf" insertbefore="Default" />
+
+  </Path>
+
+  <Path name="/Workspace/ToolbarCommands">
+    <Command id="Window.TwAjaxBrowser" text="TwAjax" kind="Button"
+             icon="http://icons3.iconfinder.netdna-cdn.com/data/icons/gnomeicontheme/16x16/stock/net/stock_online-layout.png" />
+  </Path>
+
+  <Path name="/Workspace/MainMenu/Window">
+    <MenuItem refid="Window.TwAjaxBrowser" text="Dateiliste f&#252;r TwAjax" />
+  </Path>
+
+
+
+</AddIn>

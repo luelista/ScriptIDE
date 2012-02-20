@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddIn name        = "siaSkinnable"
+       displayname = "SkinManager"
+       author      = "Max Weller"
+       url         = "http://www.codeproject.com/TBD"
+       description = "makes the scriptIDE skinnable">
+
+  <Manifest>
+    <!-- unique name of the AddIn, used when others AddIns want to reference this AddIn -->
+    <Identity name="ScriptIDE3.siaSkinnable" version = "@EntryAssemblyVersion"/>
+    <!--
+		others AddIns can specify dependencies like this:
+		<Dependency addin="ICSharpCode.Core.Demo" version="1.0.0.x-1.0.0.y"/>
+		-->
+  </Manifest>
+
+  <Runtime>
+    <Import assembly="siaSkinnable.dll"/>
+  </Runtime>
+
+  <Path name="/OptionsDialog/Pages">
+    <Class id="SkinManager" class="siaSkinnable.ctl_options"
+           path="Allgemein/Skins"
+           name="Skin-Manager" icon="http://mw.teamwiki.net/docs/img/win-icons/themeui_701-32.png" />
+
+  </Path>
+
+  <Path name="/Workspace/MainMenu/Tools">
+      <MenuItem refid="Window.SkinOptions" text="Skins bearbeiten ..." />
+  </Path>
+  
+  <Path name="/Workspace/ToolbarCommands">
+    <Toolbaritem id="Window.SkinOptions" text="Skins" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/themeui_701-16.png" />
+
+  </Path>
+
+  <Path name="/OptionsDialog/SkinObjects">
+    <SkinObject id="MainWindow" addinname="siaIDEMain" />
+    <SkinObject id="Toolstrips" addinname="siaIDEMain" />
+
+  </Path>
+
+
+</AddIn>

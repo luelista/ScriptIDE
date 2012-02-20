@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddIn name        = "siaFormDesigner"
+       displayname = "FormDesigner"
+       author      = "Max Weller"
+       url         = "http://www.codeproject.com/TBD"
+       description = "Windows Forms Designer">
+
+  <Manifest>
+    <!-- unique name of the AddIn, used when others AddIns want to reference this AddIn -->
+    <Identity name="ScriptIDE3.siaFormDesigner" version = "@EntryAssemblyVersion"/>
+    <!--
+		others AddIns can specify dependencies like this:
+		<Dependency addin="ICSharpCode.Core.Demo" version="1.0.0.x-1.0.0.y"/>
+		-->
+  </Manifest>
+
+  <Runtime>
+    <Import assembly="siaFormDesigner.dll"/>
+  </Runtime>
+
+  <Path name="/Workspace/ToolWindows">
+    <ToolWindow id="FormDesigner" name="Windows Forms Designer"
+           dockhint="Right" class="siaFormDesigner.frmTB_designer" />
+  </Path>
+
+  <Path name="/Workspace/ToolbarCommands">
+    <Toolbaritem id="Window.Designer" text="Design" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/HTMLSubmitHS.png" />
+    
+
+  </Path>
+
+
+
+</AddIn>

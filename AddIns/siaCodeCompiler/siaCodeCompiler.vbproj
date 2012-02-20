@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BDFAF73E-6DE6-476E-8E7C-7F0D06A77A2D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>siaCodeCompiler</RootNamespace>
+    <AssemblyName>siaCodeCompiler</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>siaCodeCompiler.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>siaCodeCompiler.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ScintillaNet, Version=2.2.3614.35512, Culture=neutral, PublicKeyToken=948d6c9751444115, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\ScintillaNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ScriptIDE.Core, Version=4.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\ScriptIDE.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ScriptIDE.ScriptWindowHelper, Version=4.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\ScriptIDE.ScriptWindowHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="siaIDEMain, Version=4.2.1.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\siaIDEMain.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.1.32294, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="ScriptIDE" />
+    <Import Include="ScriptIDE.Core" />
+    <Import Include="ScriptIDE.ScriptHost" />
+    <Import Include="ScriptIDE.ScriptWindowHelper" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="WeifenLuo.WinFormsUI.Docking" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="app_interprocHandler.vb" />
+    <Compile Include="app_main.vb">
+    </Compile>
+    <Compile Include="app_scriptAddins.vb" />
+    <Compile Include="app_typeFinder.vb" />
+    <Compile Include="Connect.vb" />
+    <Compile Include="DocsByReflection.vb" />
+    <Compile Include="DocsByReflectionException.vb" />
+    <Compile Include="frmTB_infoTips.Designer.vb">
+      <DependentUpon>frmTB_infoTips.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTB_infoTips.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_exedebugging.Designer.vb">
+      <DependentUpon>frm_exedebugging.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_exedebugging.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListViewSortManager.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PropertyPages\prop_searchPath.Designer.vb">
+      <DependentUpon>prop_searchPath.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\prop_searchPath.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\prop_scriptAddins.Designer.vb">
+      <DependentUpon>prop_scriptAddins.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\prop_scriptAddins.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\prop_autorunClasses.Designer.vb">
+      <DependentUpon>prop_autorunClasses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\prop_autorunClasses.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rtf\ImageNode.vb" />
+    <Compile Include="Rtf\InfoGroup.vb" />
+    <Compile Include="Rtf\ObjectNode.vb" />
+    <Compile Include="Rtf\RtfColorTable.vb" />
+    <Compile Include="Rtf\RtfDocument.vb" />
+    <Compile Include="Rtf\RtfFontTable.vb" />
+    <Compile Include="Rtf\RtfLex.vb" />
+    <Compile Include="Rtf\RtfNodeCollection.vb" />
+    <Compile Include="Rtf\RtfNodeType.vb" />
+    <Compile Include="Rtf\RtfReader.vb" />
+    <Compile Include="Rtf\RtfTextFormat.vb" />
+    <Compile Include="Rtf\RtfToken.vb" />
+    <Compile Include="Rtf\RtfTokenType.vb" />
+    <Compile Include="Rtf\RtfTree.vb" />
+    <Compile Include="Rtf\RtfTreeNode.vb" />
+    <Compile Include="Rtf\SarParser.vb" />
+    <Compile Include="sys_htmlToRTF.vb" />
+    <Compile Include="sys_interproc.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frm_exedebugging.resx">
+      <DependentUpon>frm_exedebugging.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmTB_infoTips.resx">
+      <DependentUpon>frmTB_infoTips.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\prop_searchPath.resx">
+      <DependentUpon>prop_searchPath.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\prop_scriptAddins.resx">
+      <DependentUpon>prop_scriptAddins.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\prop_autorunClasses.resx">
+      <DependentUpon>prop_autorunClasses.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SHELL32_275.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="siaCodeCompiler.AddIn">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Main\scriptHostLib\scriptHostLib.vbproj">
+      <Project>{E47A3E06-C90C-44B9-9DC5-F113D8ADD9AC}</Project>
+      <Name>scriptHostLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

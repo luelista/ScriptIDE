@@ -1,0 +1,645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8503937E-4512-49B8-B2A0-BBB58C2E35E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ScriptIDE.Main</RootNamespace>
+    <AssemblyName>siaIDEMain</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>siaIDEMain.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>siaIDEMain.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="edtFTPnet, Version=1.2.6.0, Culture=neutral, PublicKeyToken=4b0c991f43097782">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\edtFTPnet.dll</HintPath>
+    </Reference>
+    <Reference Include="FtpLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\FtpLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory, Version=3.0.0.3676, Culture=neutral, PublicKeyToken=efe927acf176eea2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Dom, Version=3.0.0.3676, Culture=neutral, PublicKeyToken=f829da5c02be14ee, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\ICSharpCode.SharpDevelop.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="LuaDebugger, Version=0.1.0.19270, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\LuaDebugger.dll</HintPath>
+    </Reference>
+    <Reference Include="LuaInterface, Version=2.0.0.19270, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\LuaInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ManagedWinapi, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\yEXE\ManagedWinapi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TeamSystem.Data.UnitTesting, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.Vsa" />
+    <Reference Include="Mono.Cecil, Version=0.6.9.1, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="MWupd3.UpdateCheck, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\yEXE\MWupd3.UpdateCheck.dll</HintPath>
+    </Reference>
+    <Reference Include="ScintillaNet, Version=2.2.3614.35512, Culture=neutral, PublicKeyToken=948d6c9751444115, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\ScintillaNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TenTec.Windows.iGridLib.iGrid, Version=2.50.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\TenTec.Windows.iGridLib.iGrid.DLL</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.1.32294, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="ScriptIDE.Core" />
+    <Import Include="ScriptIDE.ScriptWindowHelper" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="WeifenLuo.WinFormsUI.Docking" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cls_IDEHelper.vb" />
+    <Compile Include="Commands\app_fileTypeHandling.vb" />
+    <Compile Include="CodeEditor\app_onIntelliExecute.vb" />
+    <Compile Include="CodeEditor\app_syntaxHighlight.vb" />
+    <Compile Include="CodeEditor\frmDC_scintilla.Designer.vb">
+      <DependentUpon>frmDC_scintilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CodeEditor\frmDC_scintilla.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeEditor\sys_merkeZeileAbruf.vb" />
+    <Compile Include="Commands\frm_selectCommand.Designer.vb">
+      <DependentUpon>frm_selectCommand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\frm_selectCommand.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuaScripting\frmTB_luaInstances.Designer.vb">
+      <DependentUpon>frmTB_luaInstances.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LuaScripting\frmTB_luaInstances.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuaScripting\LuaGenericDockContent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonProtocols\app_everyThingSDK.vb" />
+    <Compile Include="CommonProtocols\app_ftpManager.vb" />
+    <Compile Include="CommonProtocols\Connect.vb" />
+    <Compile Include="CommonProtocols\ctl_local_options.Designer.vb">
+      <DependentUpon>ctl_local_options.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CommonProtocols\ctl_local_options.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonProtocols\ctl_options.Designer.vb">
+      <DependentUpon>ctl_options.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CommonProtocols\ctl_options.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonProtocols\frmTB_fileExplorer.designer.vb">
+      <DependentUpon>frmTB_fileExplorer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CommonProtocols\frmTB_fileExplorer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonProtocols\frmTB_ftpExplorer.designer.vb">
+      <DependentUpon>frmTB_ftpExplorer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CommonProtocols\frmTB_ftpExplorer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonProtocols\frm_createNew.Designer.vb">
+      <DependentUpon>frm_createNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CommonProtocols\frm_createNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonProtocols\frm_fileCacher.Designer.vb">
+      <DependentUpon>frm_fileCacher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CommonProtocols\frm_fileCacher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonProtocols\frm_fileExplorerFavorites.Designer.vb">
+      <DependentUpon>frm_fileExplorerFavorites.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CommonProtocols\frm_fileExplorerFavorites.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonProtocols\FTPHandler.vb" />
+    <Compile Include="CommonProtocols\JSON.vb" />
+    <Compile Include="CommonProtocols\JsonParser.vb" />
+    <Compile Include="CommonProtocols\ListViewSortManager.vb" />
+    <Compile Include="CommonProtocols\LocalFileHandler.vb" />
+    <Compile Include="CommonProtocols\sys_ftpUpload.vb" />
+    <Compile Include="CommonProtocols\WinInet.vb" />
+    <Compile Include="Connect.vb" />
+    <Compile Include="legacyWidgetSupport\app_legacyWidgetSupport.vb" />
+    <Compile Include="legacyWidgetSupport\cls_widgetHelper.vb" />
+    <Compile Include="Commands\app_localKeyboardHook.vb" />
+    <Compile Include="LuaScripting\LuaScripting.vb" />
+    <Compile Include="MainWindow\app_main.vb" />
+    <Compile Include="MainWindow\app_tabManager.vb" />
+    <Compile Include="Commands\app_toolbarCustomize.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainWindow\app_winVista.vb" />
+    <Compile Include="MainWindow\DragDropManager.vb" />
+    <Compile Include="MainWindow\frm_about.Designer.vb">
+      <DependentUpon>frm_about.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\frm_about.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow\frm_createToolbar.Designer.vb">
+      <DependentUpon>frm_createToolbar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\frm_createToolbar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow\frm_editBookmark.Designer.vb">
+      <DependentUpon>frm_editBookmark.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\frm_editBookmark.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow\frm_main.Designer.vb">
+      <DependentUpon>frm_main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\frm_main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow\frm_windowManager.Designer.vb">
+      <DependentUpon>frm_windowManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\frm_windowManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow\Workbench.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="LuaScripting\GenericPropertyPage.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\prop_Debug.Designer.vb">
+      <DependentUpon>prop_Debug.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\prop_Debug.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\prop_TextEditor.Designer.vb">
+      <DependentUpon>prop_TextEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\prop_TextEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\prop_Hotkeys2.Designer.vb">
+      <DependentUpon>prop_Hotkeys2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\prop_Hotkeys2.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\prop_General.Designer.vb">
+      <DependentUpon>prop_General.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\prop_General.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\prop_Profiles.Designer.vb">
+      <DependentUpon>prop_Profiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\prop_Profiles.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\prop_Hotkeys.Designer.vb">
+      <DependentUpon>prop_Hotkeys.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\prop_Hotkeys.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\prop_Toolbars.Designer.vb">
+      <DependentUpon>prop_Toolbars.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\prop_Toolbars.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SysModules\app_comViewer.vb" />
+    <Compile Include="SysModules\ComObjectHelpers.vb" />
+    <Compile Include="SysModules\ContentViewerService.vb" />
+    <Compile Include="SysModules\FormBorder.vb" />
+    <Compile Include="SysModules\frm_ProtocolOpenAsDialog.Designer.vb">
+      <DependentUpon>frm_ProtocolOpenAsDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SysModules\frm_ProtocolOpenAsDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysModules\sys_IconFromFileExt.vb" />
+    <Compile Include="SysModules\sys_IGridReadSave.vb" />
+    <Compile Include="SysModules\sys_imageFromWeb.vb" />
+    <Compile Include="SysModules\TwAjax.vb" />
+    <Compile Include="ToolWindows\app_consoleRun.vb" />
+    <Compile Include="ToolWindows\app_findInFiles.vb" />
+    <Compile Include="ToolWindows\frmTB_console.Designer.vb">
+      <DependentUpon>frmTB_console.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\frmTB_console.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolWindows\frmTB_globSearch.Designer.vb">
+      <DependentUpon>frmTB_globSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\frmTB_globSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolWindows\frmTB_indexList.Designer.vb">
+      <DependentUpon>frmTB_indexList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\frmTB_indexList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolWindows\frmTB_legacyWidget.Designer.vb">
+      <DependentUpon>frmTB_legacyWidget.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\frmTB_legacyWidget.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolWindows\frmTB_openedFiles.Designer.vb">
+      <DependentUpon>frmTB_openedFiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\frmTB_openedFiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolWindows\idx_default.Designer.vb">
+      <DependentUpon>idx_default.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\idx_default.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CodeEditor\frmDC_scintilla.resx">
+      <DependentUpon>frmDC_scintilla.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commands\frm_selectCommand.resx">
+      <DependentUpon>frm_selectCommand.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonProtocols\ctl_local_options.resx">
+      <DependentUpon>ctl_local_options.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonProtocols\ctl_options.resx">
+      <DependentUpon>ctl_options.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonProtocols\frmTB_fileExplorer.resx">
+      <DependentUpon>frmTB_fileExplorer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonProtocols\frmTB_ftpExplorer.resx">
+      <DependentUpon>frmTB_ftpExplorer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonProtocols\frm_createNew.resx">
+      <DependentUpon>frm_createNew.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonProtocols\frm_fileCacher.resx">
+      <DependentUpon>frm_fileCacher.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonProtocols\frm_fileExplorerFavorites.resx">
+      <DependentUpon>frm_fileExplorerFavorites.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuaScripting\frmTB_luaInstances.resx">
+      <DependentUpon>frmTB_luaInstances.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow\frm_about.resx">
+      <DependentUpon>frm_about.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow\frm_createToolbar.resx">
+      <DependentUpon>frm_createToolbar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow\frm_editBookmark.resx">
+      <DependentUpon>frm_editBookmark.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow\frm_main.resx">
+      <DependentUpon>frm_main.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow\frm_windowManager.resx">
+      <DependentUpon>frm_windowManager.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\prop_Debug.resx">
+      <DependentUpon>prop_Debug.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\prop_TextEditor.resx">
+      <DependentUpon>prop_TextEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\prop_Hotkeys2.resx">
+      <DependentUpon>prop_Hotkeys2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\prop_General.resx">
+      <DependentUpon>prop_General.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\prop_Profiles.resx">
+      <DependentUpon>prop_Profiles.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\prop_Hotkeys.resx">
+      <DependentUpon>prop_Hotkeys.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\prop_Toolbars.resx">
+      <DependentUpon>prop_Toolbars.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysModules\frm_ProtocolOpenAsDialog.resx">
+      <DependentUpon>frm_ProtocolOpenAsDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindows\frmTB_console.resx">
+      <DependentUpon>frmTB_console.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindows\frmTB_globSearch.resx">
+      <DependentUpon>frmTB_globSearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindows\frmTB_indexList.resx">
+      <DependentUpon>frmTB_indexList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindows\frmTB_legacyWidget.resx">
+      <DependentUpon>frmTB_legacyWidget.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindows\frmTB_openedFiles.resx">
+      <DependentUpon>frmTB_openedFiles.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindows\idx_default.resx">
+      <DependentUpon>idx_default.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScriptIDE.Core\ScriptIDE.Core.vbproj">
+      <Project>{7A976981-ED3E-403D-8968-8B0CCE38137B}</Project>
+      <Name>ScriptIDE.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScriptIDE.ScriptWindowHelper\ScriptIDE.ScriptWindowHelper.vbproj">
+      <Project>{6AB31434-4937-43F3-AF14-F3B0B21CA716}</Project>
+      <Name>ScriptIDE.ScriptWindowHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vsmacros_216-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treeView01_1-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VB6_1259-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activex.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\breakpoint.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\breakpoint2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\breakpoint3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\breakpoints.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bug2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\err.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\err2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\executing.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\executing3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\executing4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\executing5.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_list1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plugin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Procmon_101-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configure-toolbars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_new1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vsmacros_216-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_Down.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_Up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DefaultIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invalidicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxCCRPFolderTV6">
+      <Guid>{19B7F2A2-1610-11D3-BF30-1AF820524153}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="CCRPFolderTV6">
+      <Guid>{19B7F2A2-1610-11D3-BF30-1AF820524153}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explorer_252-32.png" />
+    <None Include="Resources\VB6_1251-32.png" />
+    <None Include="Resources\SHELL32_274-16.png" />
+    <Content Include="siaIDEMain.AddIn">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

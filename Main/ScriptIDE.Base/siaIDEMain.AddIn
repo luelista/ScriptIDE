@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddIn name        = "ScriptIDE.Main"
+       displayname = "ScriptIDE main module"
+       author      = "Max Weller"
+       url         = "http://scriptide.teamwiki.net/index.html"
+       description = ""
+       addInManagerHidden = "true">
+
+  <Manifest>
+    <!-- unique name of the AddIn, used when others AddIns want to reference this AddIn -->
+    <Identity name="ScriptIDE.Main" version = "@EntryAssemblyVersion"/>
+    <!--
+		others AddIns can specify dependencies like this:
+		<Dependency addin="ICSharpCode.Core.Demo" version="1.0.0.x-1.0.0.y"/>
+		-->
+  </Manifest>
+
+  <Runtime>
+    <Import assembly=":siaIDEMain"/>
+  </Runtime>
+
+  <Path name="/Workspace/ContentViewers">
+    <Class id="Default" mode="dockcontent" filefilter="*.*" class="ScriptIDE.Main.frmDC_scintilla" />
+
+  </Path>
+
+  <Path name="/Workspace/IndexList">
+    <Class id="Default" filefilter="*.*" class="ScriptIDE.Main.idx_default" />
+
+  </Path>
+
+  <Path name="/Workspace/Toolbars/FileToolbar">
+    <DefaultView id="File.New" />
+    <DefaultView id="File.Open" />
+    <DefaultView id="File.Save" />
+    <DefaultView id="File.SaveAll" />
+    <DefaultView id="File.Close" />
+  </Path>
+  <Path name="/Workspace/Toolbars/WindowToolbar">
+    <DefaultView id="Window.OpenedFiles" />
+    <DefaultView id="Window.IndexList" />
+    <DefaultView id="Window.Console" />
+    <DefaultView id="Window.GlobSearch" />
+  </Path>
+  <Path name="/Workspace/Toolbars/LuaDebugToolbar">
+    <DefaultView id="Lua.ContinueRun" />
+    <DefaultView id="Lua.ContinueStep" />
+    <DefaultView id="Lua.Break" />
+    <DefaultView id="Lua.Stop" />
+  </Path>
+
+  <Path name="/Workspace/MainMenu">
+    <MenuItem id="File" text="&#38;Datei">
+      <MenuItem refid="File.New" />
+      <MenuItem refid="File.Open" />
+      <MenuItem refid="File.OpenURL" />
+      <MenuItem refid="File.Save" />
+      <MenuItem refid="File.SaveAs" />
+      <MenuItem refid="File.SaveAll" />
+      <MenuSeparator id="grp0" />
+      <MenuItem refid="File.RenameFile" />
+      <MenuItem refid="File.OpenFileAs" />
+      <MenuSeparator id="grp1" />
+      <MenuItem refid="File.Close" />
+      <MenuItem refid="File.CloseAll" />
+      <MenuSeparator id="grp2" />
+      <MenuItem refid="File.ExitProgram" />
+    </MenuItem>
+    <MenuItem id="Edit" text="&#38;Bearbeiten">
+    </MenuItem>
+    <MenuItem id="Debug" text="&#38;Debug">
+      <MenuItem id="Lua" text="Lua">
+        <MenuItem refid="Window.Lua.Instances" />
+        <MenuSeparator id="grp2" />
+
+        <MenuItem refid="Lua.ContinueRun" />
+        <MenuItem refid="Lua.ContinueStep" />
+        <MenuItem refid="Lua.Break" />
+        <MenuItem refid="Lua.Stop" />
+      </MenuItem>
+    </MenuItem>
+    <MenuItem id="Window" text="&#38;Ansicht">
+      <MenuItem refid="Window.OpenedFiles" />
+      <MenuItem refid="Window.IndexList" />
+      <MenuItem refid="Window.Console" />
+      <MenuItem refid="Window.GlobSearch" />
+      <MenuItem refid="Window.ShowLocalBrowser" />
+      <MenuItem refid="Window.ShowFTPBrowser" />
+    </MenuItem>
+    <MenuItem id="Tools" text="&#38;Extras">
+      <MenuItem refid="Tools.Options" />
+    </MenuItem>
+    <MenuItem id="Help" text="&#38;?">
+      <MenuItem refid="Help.Topics" />
+      <MenuItem refid="Help.Website" />
+      <MenuSeparator />
+      <MenuItem refid="Help.About" />
+    </MenuItem>
+  </Path>
+
+  <Path name="/Workspace/Areas">
+    <Area id="Global" />
+    <Area id="MainWindow" />
+    <Area id="TextEditor" />
+    <Area id="OptionsDialog" />
+    <Area id="AnyToolWindow" />
+  </Path>
+
+  <Path name="/Workspace/ToolbarCommands">
+    <Command id="File.New" text="Neue Datei" defkey="MainWindow, CTRL-N" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/NewDocumentHS.png" />
+    <Command id="File.Open" text="Datei &#246;ffnen ..." defkey="MainWindow, CTRL-O" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/openHS.png" />
+    <Command id="File.OpenURL" text="URL &#246;ffnen ..." defkey="MainWindow, CTRL-SHIFT-O" kind="Button" icon="" />
+    <Command id="File.Save" text="Speichern" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/saveHS.png" />
+    <Command id="File.SaveAs" text="Speichern unter ..." kind="Button" icon="" />
+    <Command id="File.SaveAll" text="Alle Dateien speichern" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/SaveAllHS.png" />
+    <Command id="File.RenameFile" text="Datei umbenennen" kind="Button" icon="" />
+    <Command id="File.OpenFileAs" text="Datei öffnen als ..." kind="Button" icon="" />
+    <Command id="File.Close" text="Schlie&#223;en" defkey="TextEditor, CTRL-W" kind="Button" icon="" />
+    <Command id="File.CloseAll" text="Alle schlie&#223;en" kind="Button" icon="" />
+    <Command id="File.ExitProgram" text="Beenden" kind="Button" icon="" />
+
+    <Command id="Window.OpenedFiles" text="Ge&#246;ffnete Dateien" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/WindowsHS.png" />
+    <Command id="Window.Console" text="Konsole" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/VB6_1254-16.png" />
+    <Command id="Window.GlobSearch" text="Suche" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/FindHS.png" />
+    <Command id="Window.IndexList" text="Indexliste" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/ShowRulelinesHS.png" />
+
+    <Command id="Tools.Options" text="Konfiguration ..." kind="Button" icon="" />
+    
+    <Command id="Lua.AddinRegister" text="Registrieren" kind="Button" icon="" />
+    <Command id="Lua.AddinUnregister" text="Entfernen" kind="Button" icon="" />
+    <Command id="Lua.Run" text="Run Script" icon="http://home.max-weller.de/docs/img/win-icons/MSACCESS_324-16.png" />
+    <Command id="Lua.LoadAutocomplete" text="Load Autocomplete" icon="http://home.max-weller.de/docs/img/win-icons/utilman_102-16.png" />
+    <Command id="Lua.DebugRun" text="Run/Cont." icon="http://home.max-weller.de/docs/img/win-icons/debug-run.png" />
+    <Command id="Lua.ContinueRun" text="Run/Cont." icon="http://home.max-weller.de/docs/img/win-icons/debug-run.png" />
+    <Command id="Lua.ContinueStep" text="Step" icon="http://home.max-weller.de/docs/img/win-icons/debug-single.png" />
+    <Command id="Lua.Break" text="Pause" icon="http://mw.teamwiki.net/docs/img/win-icons/PauseHS.png" />
+    <Command id="Lua.Stop" text="Stop" icon="http://home.max-weller.de/docs/img/win-icons/debug-stop.png" />
+
+    <Command id="Window.Lua.Instances" text="Instanzen" icon="http://home.max-weller.de/docs/img/win-icons/utilman_102-16.png" />
+
+    <Command id="Help.Topics" text="Hilfe anzeigen" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/hhctrl_ICON!HTMLHELP-16.png" />
+    <Command id="Help.Website" text="Zur Website" kind="Button" icon="" />
+    <Command id="Help.About" text="Info zu ScriptIDE 4.0" kind="Button" icon="" />
+
+    <Command id="Window.ShowLocalBrowser" text="Local" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/shell32_235-16.png" />
+    <Command id="Window.ShowFTPBrowser" text="FTP" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/iexplore_32542-16.png" />
+
+  </Path>
+
+  <Path name="/Workspace/ProtocolHandlers">
+    <Class id="Local" protocol="loc:" class="ScriptIDE.Main.LocalFileHandler" />
+    <Class id="FTP" protocol="ftp:" class="ScriptIDE.Main.FTPHandler" />
+  </Path>
+
+  <Path name="/Workspace/ToolWindows">
+    <ToolWindow id="Console" name="Konsole" dockhint="Bottom" />
+    <ToolWindow id="GlobSearch" name="Suche" dockhint="Bottom" />
+    <ToolWindow id="OpenedFiles" />
+    <ToolWindow id="IndexList" />
+    <ToolWindow id="LocalFileBrowser" name="Lokale Ordner" dockhint="Right" class="ScriptIDE.Main.frmTB_fileExplorer" />
+    <ToolWindow id="FTPBrowser" name="FTP Browser" dockhint="Right" class="ScriptIDE.Main.frmTB_ftpExplorer" />
+  </Path>
+
+
+  <Path name="/OptionsDialog/Pages">
+    
+    <Class id="General" class="ScriptIDE.Main.prop_General"
+                   path="Allgemein/Allgemein"
+                   name="Allgemeine Optionen" icon="http://mw.teamwiki.net/docs/img/win-icons/eSettings_32512-32.png" />
+    
+    <Class id="Profiles" class="ScriptIDE.Main.prop_Profiles"
+                   path="Allgemein/Profile"
+                   name="Profil-Optionen" icon="http://mw.teamwiki.net/docs/img/win-icons/graphedt_3-32.png" />
+    
+    <Class id="ToolbarCustomize" class="ScriptIDE.Main.prop_Toolbars"
+           path="Allgemein/Toolbars"
+           name="Toolbars anpassen" icon="http://mw.teamwiki.net/docs/img/win-icons/MSACCESS_289-32.png" />
+    <!--
+    <Class id="UserScripts" class="ScriptIDE.Main.prop_UserScripts"
+               path="Erweiterungen/Userskripte"
+               name="Userskripte bearbeiten" icon="http://mw.teamwiki.net/docs/img/win-icons/configure-toolbars.png" />
+    -->
+    <Class id="Hotkeys2" class="ScriptIDE.Main.prop_Hotkeys2"
+               path="Allgemein/Tastatur (2)"
+               name="Tastaturk&#252;rzel222" icon="http://mw.teamwiki.net/docs/img/win-icons/charmap_111-32.png" />
+
+    <Class id="Hotkeys" class="ScriptIDE.Main.prop_Hotkeys"
+               path="Allgemein/Tastatur (alt)"
+               name="Tastaturk&#252;rzel" icon="http://mw.teamwiki.net/docs/img/win-icons/charmap_111-32.png" />
+
+    <Class id="Hotkeys" class="ScriptIDE.Main.prop_TextEditor"
+               path="Editoren/Text-Editor"
+               name="Tastaturk&#252;rzel" icon="http://mw.teamwiki.net/docs/img/win-icons/charmap_111-32.png" />
+
+    <Class id="FtpHosts" class="ScriptIDE.Main.ctl_options"
+           path="Protokolle/FTP-Hosts"
+           name="File Transfer Protocol (FTP) Hosts" />
+
+    <Class id="LocalFilesGeneral" class="ScriptIDE.Main.ctl_local_options"
+           path="Protokolle/Lokal"
+           name="Lokale Ordner (Allgemein)" />
+
+    <Class id="Debug" class="ScriptIDE.Main.prop_Debug"
+           path="Debug/Debug"
+           name="Debug Viewer" />
+
+  </Path>
+
+  <Path name="/Workspace/FileCommands/nsla">
+    <ToolSeparator />
+    <ToolButton refid="Lua.AddinRegister" />
+    <ToolButton refid="Lua.AddinUnregister" />
+  </Path>
+  <Path name="/Workspace/FileCommands/lua.wlua">
+    <ToolSeparator />
+    <ToolButton refid="Lua.Run" />
+    <ToolSeparator />
+    <ToolButton refid="Lua.DebugRun" />
+    <ToolSeparator />
+    <ToolButton refid="Lua.LoadAutocomplete" />
+  </Path>
+
+  <Path name="/Core/Interproc/Commands">
+    <QUERY id="GetActiveURL" parameters="-" help="gibt die URL des akt. Tab zur&#252;ck"/>
+    <QUERY id="GetActiveFileSpec" parameters="-" help="gibt den Dateipfad des akt. Tab zur&#252;ck"/>
+    <QUERY id="IsFileLoaded" parameters="FileSpec/URI" help="'TRUE', wenn diese Datei geladen ist, sonst 'FALSE'"/>
+
+    <CMD id="Navigate" parameters="FileSpec[?lineNr]" help="FileSpec=Lokaler Dateiname oder URI, lineNr(optional)=zeilennummer"/>
+    <CMD id="_nextInstance" parameters="args" help="for internal use only"/>
+
+  </Path>
+
+  
+  
+  
+</AddIn>

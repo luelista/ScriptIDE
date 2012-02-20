@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddIn name        = "siaHexEdit"
+       displayname = "HexEdit"
+       author      = "Max Weller"
+       url         = "http://www.codeproject.com/TBD"
+       description = "hex editor">
+
+  <Manifest>
+    <!-- unique name of the AddIn, used when others AddIns want to reference this AddIn -->
+    <Identity name="ScriptIDE3.siaHexEdit" version = "@EntryAssemblyVersion"/>
+    <!--
+		others AddIns can specify dependencies like this:
+		<Dependency addin="ICSharpCode.Core.Demo" version="1.0.0.x-1.0.0.y"/>
+		-->
+  </Manifest>
+
+  <Runtime>
+    <Import assembly="siaHexEdit.dll"/>
+  </Runtime>
+
+  <Path name="/Workspace/ContentViewers">
+    <Class id="HexEdit" mode="dockcontent" filefilter="*.hex;*.exe;*.dll;*.bin"
+           class="siaHexEdit.frmDC_hexEdit" insertbefore="Default" />
+
+  </Path>
+
+
+  <Path name="/OptionsDialog/Pages">
+    <Class id="HexEditorOptions" class="siaHexEdit.ctl_options"
+           path="Editoren/HEX-Editor"
+           name="HEX-Editor" icon="http://mw.teamwiki.net/docs/img/win-icons/App-32.png" />
+
+  </Path>
+  
+  <Path name="/Workspace/MainMenu/File">
+    <MenuItem refid="HexEdit.FileOpen" insertbefore="grp1" />
+  </Path>
+  <Path name="/Workspace/MainMenu/Edit">
+    <MenuItem refid="HexEdit.ShowActiveFile" text="HEX-Ansicht &#246;ffnen" />
+  </Path>
+  
+  <Path name="/Workspace/ToolbarCommands">
+    <Toolbaritem id="HexEdit.ShowActiveFile" text="HEX-Editor" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/App-16.png" />
+    <Toolbaritem id="HexEdit.FileOpen" text="Datei im HEX-Editor &#246;ffnen ..." kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/HexOpen.png" />
+
+
+  </Path>
+
+</AddIn>
