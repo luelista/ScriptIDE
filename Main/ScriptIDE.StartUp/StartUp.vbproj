@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\app.manifest" />
+    <None Include="sideres.res" />
     <Content Include="dfrgres_106.ico" />
     <Content Include="misc_911.ico" />
     <Content Include="MSACCESS_265.ico" />
