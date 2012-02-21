@@ -209,6 +209,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agentsvr_113.ico" />
+    <Content Include="Growl.Connector.dll" />
+    <Content Include="Growl.CoreLibrary.dll" />
     <Content Include="ieframe_112.ico" />
     <None Include="Resources\arrow_down_16x161.png" />
     <None Include="Resources\cursor_16x161.png" />
@@ -217,6 +219,7 @@
     <None Include="Resources\new_window_16x161.png" />
     <None Include="Resources\new_window_16x16.png" />
     <Content Include="rtcshare_102.ico" />
+    <Content Include="TenTec.Windows.iGridLib.iGrid.dll" />
     <None Include="splashscreen3.jpg" />
   </ItemGroup>
   <ItemGroup>
