@@ -63,7 +63,7 @@ Class LuaDebugHost
         Console.WriteLine("Trying to connect to TraceServer at 127.0.0.1:10777 (Cancel with CTRL+C) ...")
         traceSocket = New Net.Sockets.TcpClient()
         traceSocket.Connect(New Net.IPEndPoint(Net.IPAddress.Loopback, 10777))
-        tsender = New IO.StreamWriter(debugSocket.GetStream)
+        tsender = New IO.StreamWriter(traceSocket.GetStream)
         tsender.AutoFlush = True
         tsender.WriteLine("Register: LuaDebugHost; " + file)
         traceEnabled = True
@@ -228,7 +228,7 @@ Class LuaDebugHost
     tsender.WriteLine(out)
   End Sub
   Function tmask(ByVal out As String) As String
-    Return out.Replace("\", "\\").Replace(vbCr, "\r").Replace(vbLf, "\n").Replace("|", "\|")
+    Return out.Replace("\", "\\").Replace(vbCr, "\r").Replace(vbLf, "\n").Replace("|", "\s")
   End Function
 
 

@@ -45,6 +45,26 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "StartUp", "Main\ScriptIDE.S
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "traceMonitor", "traceMonitor\traceMonitor\traceMonitor.vbproj", "{DBD443ED-AB0B-4E78-8F2B-4C57C6B4775B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{D48935C7-8627-4ECA-8E31-B2593566961C}"
+	ProjectSection(SolutionItems) = preProject
+		references\ButtonListbar.dll = references\ButtonListbar.dll
+		references\edtFTPnet.dll = references\edtFTPnet.dll
+		references\FtpLib.dll = references\FtpLib.dll
+		references\ICSharpCode.NRefactory.dll = references\ICSharpCode.NRefactory.dll
+		references\ICSharpCode.SharpDevelop.Dom.dll = references\ICSharpCode.SharpDevelop.Dom.dll
+		references\lua51.dll = references\lua51.dll
+		references\LuaDebugger.dll = references\LuaDebugger.dll
+		references\LuaInterface.dll = references\LuaInterface.dll
+		references\ManagedWinapi.dll = references\ManagedWinapi.dll
+		references\ManagedWinapiNativeHelper.dll = references\ManagedWinapiNativeHelper.dll
+		references\Mono.Cecil.dll = references\Mono.Cecil.dll
+		references\SciLexer.dll = references\SciLexer.dll
+		references\ScintillaNet.dll = references\ScintillaNet.dll
+		references\splashscreen2.jpg = references\splashscreen2.jpg
+		references\TenTec.Windows.iGridLib.iGrid.DLL = references\TenTec.Windows.iGridLib.iGrid.DLL
+		references\WeifenLuo.WinFormsUI.Docking.dll = references\WeifenLuo.WinFormsUI.Docking.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 19
