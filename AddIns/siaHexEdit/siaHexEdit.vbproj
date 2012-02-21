@@ -145,6 +145,7 @@
     <EmbeddedResource Include="Resources\App.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Be.Windows.Forms.HexBox.dll" />
     <Content Include="siaHexEdit.AddIn">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
