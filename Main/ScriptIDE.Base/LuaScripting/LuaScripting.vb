@@ -107,7 +107,7 @@
 
 
       Dim Psi As New ProcessStartInfo()
-      Psi.FileName = "C:\Users\mw\Dropbox\netProjekte2\v4.1\scriptHost06\bin\sideluadbg.exe"
+            Psi.FileName = "sideluadbg.exe"
       Psi.Arguments = LUA_DEBUG_PORT & " """ & MainScript & """"
       Psi.WorkingDirectory = IO.Path.GetDirectoryName(MainScript)
       HostProcess = Process.Start(Psi)
