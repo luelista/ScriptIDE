@@ -15,10 +15,8 @@ Imports TenTec.Windows.iGridLib
     End Set
   End Property
 
-
   Sub iniPicUpLine()
     sb = New StringBuilder
-
   End Sub
 
   Sub picUpTab(ByVal tabText As String)

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <AddIn name        = "siaGridView"
        displayname = "GridView"
-       author      = "Max Weller"
+       author      = "Max Weller - Elmar Schropp"
        url         = "http://www.max-weller.de/sia/gridview.html"
        description = "Displays tables with IGrid">
 
