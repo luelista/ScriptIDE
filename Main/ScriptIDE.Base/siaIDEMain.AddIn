@@ -107,43 +107,43 @@
   </Path>
 
   <Path name="/Workspace/ToolbarCommands">
-    <Command id="File.New" text="Neue Datei" defkey="MainWindow, CTRL-N" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/NewDocumentHS.png" />
-    <Command id="File.Open" text="Datei &#246;ffnen ..." defkey="MainWindow, CTRL-O" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/openHS.png" />
-    <Command id="File.OpenURL" text="URL &#246;ffnen ..." defkey="MainWindow, CTRL-SHIFT-O" kind="Button" icon="" />
-    <Command id="File.Save" text="Speichern" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/saveHS.png" />
-    <Command id="File.SaveAs" text="Speichern unter ..." kind="Button" icon="" />
-    <Command id="File.SaveAll" text="Alle Dateien speichern" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/SaveAllHS.png" />
-    <Command id="File.RenameFile" text="Datei umbenennen" kind="Button" icon="" />
-    <Command id="File.OpenFileAs" text="Datei öffnen als ..." kind="Button" icon="" />
-    <Command id="File.Close" text="Schlie&#223;en" defkey="TextEditor, CTRL-W" kind="Button" icon="" />
-    <Command id="File.CloseAll" text="Alle schlie&#223;en" kind="Button" icon="" />
-    <Command id="File.ExitProgram" text="Beenden" kind="Button" icon="" />
+    <Command id="File.New" text="New File" defkey="MainWindow, CTRL-N" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/NewDocumentHS.png" />
+    <Command id="File.Open" text="Open ..." defkey="MainWindow, CTRL-O" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/openHS.png" />
+    <Command id="File.OpenURL" text="Open URL ..." defkey="MainWindow, CTRL-SHIFT-O" kind="Button" icon="" />
+    <Command id="File.Save" text="Save" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/saveHS.png" />
+    <Command id="File.SaveAs" text="Save as ..." kind="Button" icon="" />
+    <Command id="File.SaveAll" text="Save all files" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/SaveAllHS.png" />
+    <Command id="File.RenameFile" text="Rename" kind="Button" icon="" />
+    <Command id="File.OpenFileAs" text="Open as ..." kind="Button" icon="" />
+    <Command id="File.Close" text="Close" defkey="TextEditor, CTRL-W" kind="Button" icon="" />
+    <Command id="File.CloseAll" text="Close all" kind="Button" icon="" />
+    <Command id="File.ExitProgram" text="Exit" kind="Button" icon="" />
 
-    <Command id="Window.OpenedFiles" text="Ge&#246;ffnete Dateien" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/WindowsHS.png" />
-    <Command id="Window.Console" text="Konsole" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/VB6_1254-16.png" />
-    <Command id="Window.GlobSearch" text="Suche" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/FindHS.png" />
-    <Command id="Window.IndexList" text="Indexliste" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/ShowRulelinesHS.png" />
+    <Command id="Window.OpenedFiles" text="Opened files" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/WindowsHS.png" />
+    <Command id="Window.Console" text="Console" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/VB6_1254-16.png" />
+    <Command id="Window.GlobSearch" text="Search" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/FindHS.png" />
+    <Command id="Window.IndexList" text="Index list" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/ShowRulelinesHS.png" />
 
-    <Command id="Tools.Options" text="Konfiguration ..." kind="Button" icon="" />
+    <Command id="Tools.Options" text="Preferences ..." kind="Button" icon="" />
     
-    <Command id="Lua.AddinRegister" text="Registrieren" kind="Button" icon="" />
-    <Command id="Lua.AddinUnregister" text="Entfernen" kind="Button" icon="" />
+    <Command id="Lua.AddinRegister" text="Register" kind="Button" icon="" />
+    <Command id="Lua.AddinUnregister" text="Unregister" kind="Button" icon="" />
     <Command id="Lua.Run" text="Run Script" icon="http://home.max-weller.de/docs/img/win-icons/MSACCESS_324-16.png" />
     <Command id="Lua.LoadAutocomplete" text="Load Autocomplete" icon="http://home.max-weller.de/docs/img/win-icons/utilman_102-16.png" />
-    <Command id="Lua.DebugRun" text="Run/Cont." icon="http://home.max-weller.de/docs/img/win-icons/debug-run.png" />
-    <Command id="Lua.ContinueRun" text="Run/Cont." icon="http://home.max-weller.de/docs/img/win-icons/debug-run.png" />
+    <Command id="Lua.DebugRun" text="Debug Script" icon="http://home.max-weller.de/docs/img/win-icons/debug-run.png" />
+    <Command id="Lua.ContinueRun" text="Continue" icon="http://home.max-weller.de/docs/img/win-icons/debug-run.png" />
     <Command id="Lua.ContinueStep" text="Step" icon="http://home.max-weller.de/docs/img/win-icons/debug-single.png" />
     <Command id="Lua.Break" text="Pause" icon="http://mw.teamwiki.net/docs/img/win-icons/PauseHS.png" />
     <Command id="Lua.Stop" text="Stop" icon="http://home.max-weller.de/docs/img/win-icons/debug-stop.png" />
 
-    <Command id="Window.Lua.Instances" text="Instanzen" icon="http://home.max-weller.de/docs/img/win-icons/utilman_102-16.png" />
+    <Command id="Window.Lua.Instances" text="Instances" icon="http://home.max-weller.de/docs/img/win-icons/utilman_102-16.png" />
 
-    <Command id="Help.Topics" text="Hilfe anzeigen" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/hhctrl_ICON!HTMLHELP-16.png" />
-    <Command id="Help.Website" text="Zur Website" kind="Button" icon="" />
-    <Command id="Help.About" text="Info zu ScriptIDE 4.0" kind="Button" icon="" />
+    <Command id="Help.Topics" text="Help topics" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/hhctrl_ICON!HTMLHELP-16.png" />
+    <Command id="Help.Website" text="Open Website" kind="Button" icon="" />
+    <Command id="Help.About" text="About ScriptIDE ..." kind="Button" icon="" />
 
-    <Command id="Window.ShowLocalBrowser" text="Local" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/shell32_235-16.png" />
-    <Command id="Window.ShowFTPBrowser" text="FTP" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/iexplore_32542-16.png" />
+    <Command id="Window.ShowLocalBrowser" text="Local Directories" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/shell32_235-16.png" />
+    <Command id="Window.ShowFTPBrowser" text="FTP Browser" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/iexplore_32542-16.png" />
 
   </Path>
 

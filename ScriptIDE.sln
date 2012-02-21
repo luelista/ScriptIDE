@@ -48,6 +48,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{D48935C7-8627-4ECA-8E31-B2593566961C}"
 	ProjectSection(SolutionItems) = preProject
 		references\ButtonListbar.dll = references\ButtonListbar.dll
+		references\ccrpftv6.ocx = references\ccrpftv6.ocx
 		references\edtFTPnet.dll = references\edtFTPnet.dll
 		references\FtpLib.dll = references\FtpLib.dll
 		references\ICSharpCode.NRefactory.dll = references\ICSharpCode.NRefactory.dll
@@ -63,6 +64,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", 
 		references\splashscreen2.jpg = references\splashscreen2.jpg
 		references\TenTec.Windows.iGridLib.iGrid.DLL = references\TenTec.Windows.iGridLib.iGrid.DLL
 		references\WeifenLuo.WinFormsUI.Docking.dll = references\WeifenLuo.WinFormsUI.Docking.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bin", "bin", "{94B2820C-5014-44F6-AE7C-F8010E70CBA6}"
+	ProjectSection(SolutionItems) = preProject
+		references\ccrpftv6.ocx = references\ccrpftv6.ocx
+		references\SciLexer.dll = references\SciLexer.dll
 	EndProjectSection
 EndProject
 Global
