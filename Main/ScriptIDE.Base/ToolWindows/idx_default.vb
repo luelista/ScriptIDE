@@ -48,8 +48,11 @@
       Dim topIndex = .TopIndex
       .Items.Clear()
       .Items.AddRange(out)
-      .SelectedIndex = selIndex
-      .TopIndex = topIndex
+
+      Try 'Restore last selection, may fail
+        .SelectedIndex = selIndex
+        .TopIndex = topIndex
+      Catch : End Try
       .Show()
       skipNavIndexList = False
     End With
