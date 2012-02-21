@@ -107,9 +107,9 @@
 
 
       Dim Psi As New ProcessStartInfo()
-            Psi.FileName = "sideluadbg.exe"
+      Psi.FileName = IO.Path.Combine(ParaService.AppPath, "sideluadbg.exe")
       Psi.Arguments = LUA_DEBUG_PORT & " """ & MainScript & """"
-      Psi.WorkingDirectory = IO.Path.GetDirectoryName(MainScript)
+      'Psi.WorkingDirectory = IO.Path.GetDirectoryName(MainScript)
       HostProcess = Process.Start(Psi)
       HostProcess.EnableRaisingEvents = True
       AddHandler HostProcess.Exited, AddressOf HostProcess_Exited
@@ -165,7 +165,7 @@
         End If
         If DebugLastTab IsNot Nothing Then DebugLastTab.highlightExecutingLine(-1)
         If Not String.IsNullOrEmpty(tab) Then
-          DebugLastTab = gotoNote(URL)
+          DebugLastTab = gotoNote(tab)
           DebugLastTab.highlightExecutingLine(line)
         Else
           DebugLastTab = Nothing
