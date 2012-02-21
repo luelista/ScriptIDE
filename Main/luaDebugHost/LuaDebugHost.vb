@@ -26,12 +26,17 @@ Class LuaDebugHost
   Dim breakpoint As Hashtable
   Dim stackDepth As Integer
 
+  Dim debuggerPort As Integer
+  Dim scriptFilespec As String
+
   Public Shared Sub Main(ByVal args() As String)
     If args.Length <> 2 Then
       Console.WriteLine("Usage: {0} port file", My.Application.Info.AssemblyName)
       Return
     End If
-    Dim xxxx As New LuaDebugHost(args(0), args(1))
+
+    Dim myLuaDebugHost As New LuaDebugHost(args(0), args(1))
+    myLuaDebugHost.Run()
   End Sub
 
   Sub handleException(ByVal ex As Exception)
@@ -50,12 +55,26 @@ Class LuaDebugHost
     If traceEnabled Then _
        _Lua_trace("Unhandled exception", ex.ToString, "err")
 
+
+    'TODO: Fix Bug in LuaInterface.dll which leads to a crash
+    'TODO: in luanet/metatable:__index
+
+    MsgBox(ex.ToString + vbNewLine + vbNewLine + ex.StackTrace + vbNewLine + vbNewLine, MsgBoxStyle.Critical, "Fehler")
+    If ex.InnerException IsNot Nothing Then
+      MsgBox(ex.InnerException.ToString + vbNewLine + vbNewLine + ex.InnerException.StackTrace + vbNewLine + vbNewLine, MsgBoxStyle.Critical, "Fehler Inner")
+
+    End If
+
     Console.BackgroundColor = ConsoleColor.Black
     Console.Out.Flush()
   End Sub
 
   Sub New(ByVal port As Integer, ByVal file As String)
+    debuggerPort = port
+    scriptFilespec = file
+  End Sub
 
+  Sub Run()
     Try
       debugMode = DebuggerModes.Break
 
@@ -65,7 +84,7 @@ Class LuaDebugHost
         traceSocket.Connect(New Net.IPEndPoint(Net.IPAddress.Loopback, 10777))
         tsender = New IO.StreamWriter(traceSocket.GetStream)
         tsender.AutoFlush = True
-        tsender.WriteLine("Register: LuaDebugHost; " + file)
+        tsender.WriteLine("Register: LuaDebugHost; " + scriptFilespec)
         traceEnabled = True
         Console.WriteLine("OK, Trace enabled.")
       Catch ex As Exception
@@ -75,7 +94,7 @@ Class LuaDebugHost
 
       Console.WriteLine("Waiting for debugger to attach (Cancel with CTRL+C) ...")
       debugSocket = New Net.Sockets.TcpClient()
-      debugSocket.Connect(New Net.IPEndPoint(Net.IPAddress.Loopback, port))
+      debugSocket.Connect(New Net.IPEndPoint(Net.IPAddress.Loopback, debuggerPort))
       dsender = New IO.StreamWriter(debugSocket.GetStream)
       dsender.AutoFlush = True
       dreceiver = New IO.StreamReader(debugSocket.GetStream)
@@ -89,7 +108,7 @@ Class LuaDebugHost
       Console.WriteLine("SetDebugHook ret " & r)
       AddHandler luaSpace.DebugHook, AddressOf luaSpace_DebugHook
       AddHandler luaSpace.HookException, AddressOf luaSpace_HookException
-      luaSpace.DoFile(file)
+      luaSpace.DoFile(scriptFilespec)
       luaSpace.RemoveDebugHook()
 
       QuitDebugger()
