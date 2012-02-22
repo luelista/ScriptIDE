@@ -225,7 +225,9 @@ namespace LuaInterface
             } 
 			catch(Exception e) 
 			{
-				throwError(luaState,e);
+        // This causes the luanet/metatable:__index function to crash when trying to
+        // load invalid assemblies like "System.Windows" before "System.Windows.Forms"
+				//throwError(luaState,e);
 			}
 
 			return 0;

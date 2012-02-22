@@ -40,8 +40,6 @@ Class LuaDebugHost
   End Sub
 
   Sub handleException(ByVal ex As Exception)
-    Console.BackgroundColor = ConsoleColor.Red
-    Console.ForegroundColor = ConsoleColor.White
 
     Dim errorData As New System.Text.StringBuilder()
 
@@ -67,20 +65,17 @@ Class LuaDebugHost
     If traceEnabled Then _
        _Lua_trace("Unhandled exception", errorData.ToString, "err")
 
+    ConsoleColorStack.Push(ConsoleColor.Red, ConsoleColor.White)
     Console.WriteLine("===== Program crashed =====")
     Console.WriteLine(errorData.ToString)
+    ConsoleColorStack.Pop()
 
-    'TODO: Fix Bug in LuaInterface.dll which leads to a crash
-    'TODO: in luanet/metatable:__index
+    '' For Test: Display exceptions in modal dialog
+    'MsgBox(ex.ToString + vbNewLine + vbNewLine + ex.StackTrace + vbNewLine + vbNewLine, MsgBoxStyle.Critical, "Fehler")
+    'If ex.InnerException IsNot Nothing Then
+    '  MsgBox(ex.InnerException.ToString + vbNewLine + vbNewLine + ex.InnerException.StackTrace + vbNewLine + vbNewLine, MsgBoxStyle.Critical, "Fehler Inner")
+    'End If
 
-    MsgBox(ex.ToString + vbNewLine + vbNewLine + ex.StackTrace + vbNewLine + vbNewLine, MsgBoxStyle.Critical, "Fehler")
-    If ex.InnerException IsNot Nothing Then
-      MsgBox(ex.InnerException.ToString + vbNewLine + vbNewLine + ex.InnerException.StackTrace + vbNewLine + vbNewLine, MsgBoxStyle.Critical, "Fehler Inner")
-
-    End If
-
-    Console.BackgroundColor = ConsoleColor.Black
-    Console.Out.Flush()
   End Sub
 
   Sub New(ByVal port As Integer, ByVal file As String)
