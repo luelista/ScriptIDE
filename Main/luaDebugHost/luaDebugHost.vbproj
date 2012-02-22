@@ -46,10 +46,6 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LuaInterface, Version=2.0.4.30059, Culture=neutral, PublicKeyToken=1e1fb15b02227b8a, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\references\LuaInterface.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -104,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="VCMUI_AXDPRJTEMP.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\luainterface\src\LuaInterface\LuaInterface.csproj">
+      <Project>{F55CABBB-4108-4A39-94E1-581FD46DC021}</Project>
+      <Name>LuaInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

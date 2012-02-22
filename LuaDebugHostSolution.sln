@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "luaDebugHost", "Main\luaDebugHost\luaDebugHost.vbproj", "{BD957896-BF55-4902-916E-A9EF58CAC25D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua511", "luainterface\lua-5.1.4\src\lua514.vcproj", "{0A82CC4C-9A27-461C-8DB0-A65AC6393748}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuaInterface", "luainterface\src\LuaInterface\LuaInterface.csproj", "{F55CABBB-4108-4A39-94E1-581FD46DC021}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/TFS36
+		SccProjectUniqueName0 = Main\\luaDebugHost\\luaDebugHost.vbproj
+		SccProjectName0 = Main/luaDebugHost
+		SccLocalPath0 = Main\\luaDebugHost
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = luainterface\\lua-5.1.4\\src\\lua514.vcproj
+		SccProjectName2 = luainterface/lua-5.1.4/src
+		SccLocalPath2 = luainterface\\lua-5.1.4\\src
+		SccProjectUniqueName3 = luainterface\\src\\LuaInterface\\LuaInterface.csproj
+		SccProjectName3 = luainterface/src/LuaInterface
+		SccLocalPath3 = luainterface\\src\\LuaInterface
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BD957896-BF55-4902-916E-A9EF58CAC25D}.Release|Win32.ActiveCfg = Release|Any CPU
+		{0A82CC4C-9A27-461C-8DB0-A65AC6393748}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{0A82CC4C-9A27-461C-8DB0-A65AC6393748}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{0A82CC4C-9A27-461C-8DB0-A65AC6393748}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{0A82CC4C-9A27-461C-8DB0-A65AC6393748}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0A82CC4C-9A27-461C-8DB0-A65AC6393748}.Debug|Win32.Build.0 = Debug|Win32
+		{0A82CC4C-9A27-461C-8DB0-A65AC6393748}.Release|Any CPU.ActiveCfg = Release|Win32
+		{0A82CC4C-9A27-461C-8DB0-A65AC6393748}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{0A82CC4C-9A27-461C-8DB0-A65AC6393748}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{0A82CC4C-9A27-461C-8DB0-A65AC6393748}.Release|Win32.ActiveCfg = Release|Win32
+		{0A82CC4C-9A27-461C-8DB0-A65AC6393748}.Release|Win32.Build.0 = Release|Win32
+		{F55CABBB-4108-4A39-94E1-581FD46DC021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55CABBB-4108-4A39-94E1-581FD46DC021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55CABBB-4108-4A39-94E1-581FD46DC021}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F55CABBB-4108-4A39-94E1-581FD46DC021}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F55CABBB-4108-4A39-94E1-581FD46DC021}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F55CABBB-4108-4A39-94E1-581FD46DC021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55CABBB-4108-4A39-94E1-581FD46DC021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F55CABBB-4108-4A39-94E1-581FD46DC021}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F55CABBB-4108-4A39-94E1-581FD46DC021}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F55CABBB-4108-4A39-94E1-581FD46DC021}.Release|Win32.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -43,18 +43,32 @@ Class LuaDebugHost
     Console.BackgroundColor = ConsoleColor.Red
     Console.ForegroundColor = ConsoleColor.White
 
-    Console.WriteLine("--- Unhandled exception ---")
-    Console.WriteLine(ex.ToString)
-    Console.WriteLine("--- Lua stack ---")
-    Dim i As Integer = 1, debug As LuaInterface.LuaDebug
+    Dim errorData As New System.Text.StringBuilder()
+
+    errorData.AppendLine("--- Exception ---")
+    errorData.AppendLine("... Message")
+    errorData.AppendLine(ex.ToString)
+    errorData.AppendLine("... Stack Trace")
+    errorData.AppendLine(ex.ToString)
+    If ex.InnerException IsNot Nothing Then
+      errorData.AppendLine("--- Inner Exception ---")
+      errorData.AppendLine("... Message")
+      errorData.AppendLine(ex.InnerException.ToString)
+      errorData.AppendLine("... Stack Trace")
+      errorData.AppendLine(ex.InnerException.StackTrace + vbNewLine)
+    End If
+    errorData.AppendLine("--- Lua stack ---")
+    Dim i As Integer = 0, debug As New LuaInterface.LuaDebug
     While luaSpace.GetStack(i, debug)
-      Console.WriteLine("{0}: {1} {2} {3}", i, debug.shortsrc, debug.currentline, debug.linedefined)
+      errorData.AppendFormat("{0}: {1} {2} {3}" + vbNewLine, i, debug.shortsrc, debug.currentline, debug.linedefined)
       i += 1
     End While
 
     If traceEnabled Then _
-       _Lua_trace("Unhandled exception", ex.ToString, "err")
+       _Lua_trace("Unhandled exception", errorData.ToString, "err")
 
+    Console.WriteLine("===== Program crashed =====")
+    Console.WriteLine(errorData.ToString)
 
     'TODO: Fix Bug in LuaInterface.dll which leads to a crash
     'TODO: in luanet/metatable:__index
@@ -106,6 +120,9 @@ Class LuaDebugHost
 
       Dim r = luaSpace.SetDebugHook(LuaInterface.EventMasks.LUA_MASKLINE Or LuaInterface.EventMasks.LUA_MASKCALL Or LuaInterface.EventMasks.LUA_MASKRET, 0)
       Console.WriteLine("SetDebugHook ret " & r)
+
+      Console.WriteLine()
+
       AddHandler luaSpace.DebugHook, AddressOf luaSpace_DebugHook
       AddHandler luaSpace.HookException, AddressOf luaSpace_HookException
       luaSpace.DoFile(scriptFilespec)
