@@ -42,14 +42,6 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LuaDebugger, Version=0.1.0.19270, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\references\LuaDebugger.dll</HintPath>
-    </Reference>
-    <Reference Include="LuaInterface, Version=2.0.0.19270, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\references\LuaInterface.dll</HintPath>
-    </Reference>
     <Reference Include="ManagedWinapi, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\references\ManagedWinapi.dll</HintPath>
@@ -216,6 +208,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\invalidicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\luainterface\src\LuaInterface\LuaInterface.csproj">
+      <Project>{F55CABBB-4108-4A39-94E1-581FD46DC021}</Project>
+      <Name>LuaInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -58,14 +58,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\references\ICSharpCode.SharpDevelop.Dom.dll</HintPath>
     </Reference>
-    <Reference Include="LuaDebugger, Version=0.1.0.19270, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\references\LuaDebugger.dll</HintPath>
-    </Reference>
-    <Reference Include="LuaInterface, Version=2.0.0.19270, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\references\LuaInterface.dll</HintPath>
-    </Reference>
     <Reference Include="ManagedWinapi, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\references\ManagedWinapi.dll</HintPath>
@@ -247,6 +239,9 @@
     <Compile Include="MainWindow\frm_windowManager.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MainWindow\GenericDockContent.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainWindow\Workbench.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -322,7 +317,7 @@
     <Compile Include="SysModules\sys_IGridReadSave.vb" />
     <Compile Include="SysModules\sys_imageFromWeb.vb" />
     <Compile Include="SysModules\TwAjax.vb" />
-    <Compile Include="ToolWindows\app_consoleRun.vb" />
+    <Compile Include="ToolWindows\ConsoleRun.vb" />
     <Compile Include="ToolWindows\app_findInFiles.vb" />
     <Compile Include="ToolWindows\frmTB_console.Designer.vb">
       <DependentUpon>frmTB_console.vb</DependentUpon>
@@ -497,6 +492,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\luainterface\src\LuaInterface\LuaInterface.csproj">
+      <Project>{F55CABBB-4108-4A39-94E1-581FD46DC021}</Project>
+      <Name>LuaInterface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ScriptIDE.Core\ScriptIDE.Core.vbproj">
       <Project>{7A976981-ED3E-403D-8968-8B0CCE38137B}</Project>
       <Name>ScriptIDE.Core</Name>

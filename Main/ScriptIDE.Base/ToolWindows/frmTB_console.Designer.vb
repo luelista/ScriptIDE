@@ -24,41 +24,32 @@ Partial Class frmTB_console
     Private Sub InitializeComponent()
     Me.components = New System.ComponentModel.Container
     Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTB_console))
-    Me.btnConsoleCls = New System.Windows.Forms.Button
-    Me.rtfConsoleOut = New System.Windows.Forms.RichTextBox
+    Me.btnClear = New System.Windows.Forms.Button
     Me.TextBox1 = New System.Windows.Forms.TextBox
     Me.Button7 = New System.Windows.Forms.Button
-    Me.txtRunCommand = New System.Windows.Forms.TextBox
-    Me.btnRunCommand = New System.Windows.Forms.Button
+    Me.btnStop = New System.Windows.Forms.Button
     Me.btnZoomOnOff = New System.Windows.Forms.Button
     Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+    Me.btnStart = New System.Windows.Forms.Button
+    Me.btnClose = New System.Windows.Forms.Button
     Me.Label1 = New System.Windows.Forms.Label
     Me.txtWorkDir = New System.Windows.Forms.TextBox
     Me.Label2 = New System.Windows.Forms.Label
     Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+    Me.pnlRtfContainer = New System.Windows.Forms.Panel
+    Me.cmbCommand = New System.Windows.Forms.ComboBox
     Me.SuspendLayout()
     '
-    'btnConsoleCls
+    'btnClear
     '
-    Me.btnConsoleCls.Image = CType(resources.GetObject("btnConsoleCls.Image"), System.Drawing.Image)
-    Me.btnConsoleCls.Location = New System.Drawing.Point(47, 5)
-    Me.btnConsoleCls.Name = "btnConsoleCls"
-    Me.btnConsoleCls.Size = New System.Drawing.Size(35, 23)
-    Me.btnConsoleCls.TabIndex = 14
-    Me.ToolTip1.SetToolTip(Me.btnConsoleCls, "Konsole leeren")
-    Me.btnConsoleCls.UseVisualStyleBackColor = True
-    '
-    'rtfConsoleOut
-    '
-    Me.rtfConsoleOut.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-    Me.rtfConsoleOut.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    Me.rtfConsoleOut.Location = New System.Drawing.Point(2, 86)
-    Me.rtfConsoleOut.Name = "rtfConsoleOut"
-    Me.rtfConsoleOut.Size = New System.Drawing.Size(798, 193)
-    Me.rtfConsoleOut.TabIndex = 13
-    Me.rtfConsoleOut.Text = ""
+    Me.btnClear.Enabled = False
+    Me.btnClear.Image = CType(resources.GetObject("btnClear.Image"), System.Drawing.Image)
+    Me.btnClear.Location = New System.Drawing.Point(47, 4)
+    Me.btnClear.Name = "btnClear"
+    Me.btnClear.Size = New System.Drawing.Size(36, 24)
+    Me.btnClear.TabIndex = 14
+    Me.ToolTip1.SetToolTip(Me.btnClear, "Clear console")
+    Me.btnClear.UseVisualStyleBackColor = True
     '
     'TextBox1
     '
@@ -71,41 +62,56 @@ Partial Class frmTB_console
     '
     'Button7
     '
-    Me.Button7.Location = New System.Drawing.Point(86, 32)
+    Me.Button7.Location = New System.Drawing.Point(86, 34)
     Me.Button7.Name = "Button7"
-    Me.Button7.Size = New System.Drawing.Size(78, 23)
+    Me.Button7.Size = New System.Drawing.Size(78, 21)
     Me.Button7.TabIndex = 11
     Me.Button7.Text = "sendLine:"
     Me.Button7.UseVisualStyleBackColor = True
     '
-    'txtRunCommand
+    'btnStop
     '
-    Me.txtRunCommand.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-    Me.txtRunCommand.Location = New System.Drawing.Point(169, 7)
-    Me.txtRunCommand.Name = "txtRunCommand"
-    Me.txtRunCommand.Size = New System.Drawing.Size(620, 20)
-    Me.txtRunCommand.TabIndex = 10
-    '
-    'btnRunCommand
-    '
-    Me.btnRunCommand.Location = New System.Drawing.Point(86, 5)
-    Me.btnRunCommand.Name = "btnRunCommand"
-    Me.btnRunCommand.Size = New System.Drawing.Size(78, 23)
-    Me.btnRunCommand.TabIndex = 9
-    Me.btnRunCommand.Text = "Run"
-    Me.btnRunCommand.UseVisualStyleBackColor = True
+    Me.btnStop.Enabled = False
+    Me.btnStop.Image = CType(resources.GetObject("btnStop.Image"), System.Drawing.Image)
+    Me.btnStop.Location = New System.Drawing.Point(87, 4)
+    Me.btnStop.Name = "btnStop"
+    Me.btnStop.Size = New System.Drawing.Size(36, 24)
+    Me.btnStop.TabIndex = 9
+    Me.ToolTip1.SetToolTip(Me.btnStop, "Stop command")
+    Me.btnStop.UseVisualStyleBackColor = True
     '
     'btnZoomOnOff
     '
     Me.btnZoomOnOff.BackColor = System.Drawing.SystemColors.Control
     Me.btnZoomOnOff.Font = New System.Drawing.Font("Wingdings 3", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-    Me.btnZoomOnOff.Location = New System.Drawing.Point(2, 5)
+    Me.btnZoomOnOff.Location = New System.Drawing.Point(2, 4)
     Me.btnZoomOnOff.Name = "btnZoomOnOff"
-    Me.btnZoomOnOff.Size = New System.Drawing.Size(41, 23)
+    Me.btnZoomOnOff.Size = New System.Drawing.Size(41, 24)
     Me.btnZoomOnOff.TabIndex = 20
     Me.btnZoomOnOff.Text = "rq"
     Me.btnZoomOnOff.UseVisualStyleBackColor = True
+    '
+    'btnStart
+    '
+    Me.btnStart.Image = CType(resources.GetObject("btnStart.Image"), System.Drawing.Image)
+    Me.btnStart.Location = New System.Drawing.Point(127, 4)
+    Me.btnStart.Name = "btnStart"
+    Me.btnStart.Size = New System.Drawing.Size(36, 24)
+    Me.btnStart.TabIndex = 26
+    Me.ToolTip1.SetToolTip(Me.btnStart, "Run command")
+    Me.btnStart.UseVisualStyleBackColor = True
+    '
+    'btnClose
+    '
+    Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+    Me.btnClose.Enabled = False
+    Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
+    Me.btnClose.Location = New System.Drawing.Point(752, 4)
+    Me.btnClose.Name = "btnClose"
+    Me.btnClose.Size = New System.Drawing.Size(36, 24)
+    Me.btnClose.TabIndex = 27
+    Me.ToolTip1.SetToolTip(Me.btnClose, "Close this console")
+    Me.btnClose.UseVisualStyleBackColor = True
     '
     'Label1
     '
@@ -131,29 +137,46 @@ Partial Class frmTB_console
     Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                 Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
     Me.Label2.BackColor = System.Drawing.Color.Khaki
-    Me.Label2.Location = New System.Drawing.Point(2, 31)
+    Me.Label2.Location = New System.Drawing.Point(0, 31)
     Me.Label2.Name = "Label2"
-    Me.Label2.Size = New System.Drawing.Size(797, 52)
+    Me.Label2.Size = New System.Drawing.Size(802, 52)
     Me.Label2.TabIndex = 23
     '
     'Timer1
     '
     Me.Timer1.Interval = 1100
     '
+    'pnlRtfContainer
+    '
+    Me.pnlRtfContainer.Location = New System.Drawing.Point(2, 86)
+    Me.pnlRtfContainer.Name = "pnlRtfContainer"
+    Me.pnlRtfContainer.Size = New System.Drawing.Size(786, 197)
+    Me.pnlRtfContainer.TabIndex = 24
+    '
+    'cmbCommand
+    '
+    Me.cmbCommand.FormattingEnabled = True
+    Me.cmbCommand.Location = New System.Drawing.Point(169, 6)
+    Me.cmbCommand.Name = "cmbCommand"
+    Me.cmbCommand.Size = New System.Drawing.Size(577, 21)
+    Me.cmbCommand.TabIndex = 25
+    '
     'frmTB_console
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.ClientSize = New System.Drawing.Size(801, 283)
-    Me.Controls.Add(Me.rtfConsoleOut)
+    Me.Controls.Add(Me.btnClose)
+    Me.Controls.Add(Me.btnStart)
+    Me.Controls.Add(Me.cmbCommand)
+    Me.Controls.Add(Me.pnlRtfContainer)
     Me.Controls.Add(Me.txtWorkDir)
     Me.Controls.Add(Me.Label1)
     Me.Controls.Add(Me.btnZoomOnOff)
-    Me.Controls.Add(Me.btnConsoleCls)
+    Me.Controls.Add(Me.btnClear)
     Me.Controls.Add(Me.TextBox1)
     Me.Controls.Add(Me.Button7)
-    Me.Controls.Add(Me.txtRunCommand)
-    Me.Controls.Add(Me.btnRunCommand)
+    Me.Controls.Add(Me.btnStop)
     Me.Controls.Add(Me.Label2)
     Me.DockAreas = CType(((((WeifenLuo.WinFormsUI.Docking.DockAreas.Float Or WeifenLuo.WinFormsUI.Docking.DockAreas.DockLeft) _
                 Or WeifenLuo.WinFormsUI.Docking.DockAreas.DockRight) _
@@ -169,16 +192,18 @@ Partial Class frmTB_console
     Me.PerformLayout()
 
   End Sub
-  Friend WithEvents btnConsoleCls As System.Windows.Forms.Button
-  Friend WithEvents rtfConsoleOut As System.Windows.Forms.RichTextBox
+  Friend WithEvents btnClear As System.Windows.Forms.Button
   Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
   Friend WithEvents Button7 As System.Windows.Forms.Button
-  Friend WithEvents txtRunCommand As System.Windows.Forms.TextBox
-  Friend WithEvents btnRunCommand As System.Windows.Forms.Button
+  Friend WithEvents btnStop As System.Windows.Forms.Button
   Friend WithEvents btnZoomOnOff As System.Windows.Forms.Button
   Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
   Friend WithEvents Label1 As System.Windows.Forms.Label
   Friend WithEvents txtWorkDir As System.Windows.Forms.TextBox
   Friend WithEvents Label2 As System.Windows.Forms.Label
   Friend WithEvents Timer1 As System.Windows.Forms.Timer
+  Friend WithEvents pnlRtfContainer As System.Windows.Forms.Panel
+  Friend WithEvents cmbCommand As System.Windows.Forms.ComboBox
+  Friend WithEvents btnStart As System.Windows.Forms.Button
+  Friend WithEvents btnClose As System.Windows.Forms.Button
 End Class

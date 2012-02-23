@@ -295,23 +295,25 @@
   End Function
 
 
+  'TODO !!!
+
   Public Overloads Sub executeProgramInConsole(ByVal commandLine As String, Optional ByVal workDir As String = "") Implements IIDEHelper.executeProgramInConsole
-    runConsoleProgram(commandLine, workDir)
+    'runConsoleProgram(commandLine, workDir)
   End Sub
   Public Overloads Sub executeProgramInConsole(ByVal commandLine As String, ByRef procInfo As Process, ByVal workDir As String) Implements IIDEHelper.executeProgramInConsole
-    runConsoleProgram(commandLine, workDir)
+    'runConsoleProgram(commandLine, workDir)
 
-    procInfo = consoleProcGetProcess()
+    'procInfo = consoleProcGetProcess()
   End Sub
 
   Function Console_GetProcess() As Process Implements IIDEHelper.Console_GetProcess
-    Return consoleProcGetProcess()
+    ' Return consoleProcGetProcess()
   End Function
   Function Console_ProcRunning() As Boolean Implements IIDEHelper.Console_ProcRunning
-    Return consoleProcRunning()
+    ' Return consoleProcRunning()
   End Function
   Sub Console_Kill() Implements IIDEHelper.Console_Kill
-    killConsoleProc()
+    ' killConsoleProc()
   End Sub
 
   Public Function getActiveTab() As Form Implements IIDEHelper.getActiveTab

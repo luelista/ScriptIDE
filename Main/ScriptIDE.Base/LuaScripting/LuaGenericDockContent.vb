@@ -8,6 +8,8 @@
   Private p_tabRowKey As String
   Private p_isLazy As Boolean
 
+  Public Event CurrentIndexLineChanged(ByVal lineNr As Integer) Implements Core.IDockContentForm.CurrentIndexLineChanged
+
   Private p_parameters As New Hashtable
   ReadOnly Property Parameters() As Hashtable Implements IDockContentForm.Parameters
     Get
@@ -27,8 +29,6 @@
   Public Sub createIndexList() Implements Core.IDockContentForm.createIndexList
     cls_IDEHelper.Instance.ContentHelper.SimpleCreateIndexList(Me, p_indexListCtrl)
   End Sub
-
-  Public Event CurrentIndexLineChanged(ByVal lineNr As Integer) Implements Core.IDockContentForm.CurrentIndexLineChanged
 
   Public Overrides Function GetPersistString() As String
     Return "LuaGenericDockContent|##|" + Me.Hash
@@ -245,4 +245,5 @@
       Me.Icon = getIcon(0)
     End Set
   End Property
+
 End Class

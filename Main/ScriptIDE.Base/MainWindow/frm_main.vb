@@ -95,7 +95,7 @@ Public Class frm_main
     'ideHelper.removeSIRef(ideHelper.getSIInstanceID(ParaService.ProfileName))
     'If Err.Number <> 0 Then TT.Write("releasing instance ref failed", Err.Description, "warn")
 
-    killConsoleProc()
+    'killConsoleProc()
     'glob.para("frm_main__Collapsed1") = If(SplitContainer1.Panel1Collapsed, "TRUE", "FALSE")
     'glob.para("frm_main__Collapsed2") = If(SplitContainer2.Panel2Collapsed, "TRUE", "FALSE")
     'glob.para("frm_main__TabControl1_SelectedIndex") = TabControl1.SelectedIndex

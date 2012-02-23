@@ -1,11 +1,34 @@
 ﻿Imports System.Threading
 
-Module app_consoleRun
+Class ConsoleRun
+
+  Private Shared p_currentInstance As ConsoleRun
+  Public Shared Property CurrentInstance() As ConsoleRun
+    Get
+      Return p_currentInstance
+    End Get
+    Set(ByVal value As ConsoleRun)
+      p_currentInstance = value
+      p_currentInstance.rtf.BringToFront()
+
+    End Set
+  End Property
+
   Dim console_cmd, console_para, console_workDir As String
   Delegate Sub dlg_paraLessSub()
   Delegate Sub dlg_addTextToOutWindow(ByVal txt As String, ByVal colorName As String)
   Dim procObject As Process
   Dim procObjectReady As Boolean
+
+  Public WithEvents rtf As RichTextBox
+
+  Private Sub rtf_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles rtf.KeyPress
+    writeToConsoleProc(e.KeyChar)
+  End Sub
+
+  Public Overrides Function ToString() As String
+    Return console_cmd
+  End Function
 
   Function consoleProcGetProcess() As Process
     While Not procObjectReady
@@ -104,14 +127,14 @@ Module app_consoleRun
   End Sub
 
   Sub finishedConsoleRun()
-    tbConsole.btnRunCommand.Text = "Run"
+    tbConsole.btnStop.Text = "Run"
     tbConsole.Timer1.Stop()
-    tbConsole.btnRunCommand.BackColor = Color.FromKnownColor(KnownColor.ButtonFace)
+    tbConsole.btnStop.BackColor = Color.FromKnownColor(KnownColor.ButtonFace)
     cls_IDEHelper.GetSingleton.OnConsoleEvent(2, Nothing)
   End Sub
 
   Sub addTextToOutWindow(ByVal txt As String, ByVal colorName As String)
-    With tbConsole.rtfConsoleOut
+    With rtf
       Select Case colorName
         Case "red" : .SelectionBackColor = Color.Transparent : .SelectionColor = Color.DarkRed
         Case "black" : .SelectionBackColor = Color.Transparent : .SelectionColor = Color.Black
@@ -142,9 +165,9 @@ Module app_consoleRun
       console_cmd = cmd
     End If
     console_workDir = workDir
-    tbConsole.txtRunCommand.Text = cmd
+    tbConsole.cmbCommand.Text = cmd
     tbConsole.txtWorkDir.Text = workDir
-    tbConsole.btnRunCommand.Text = "KILL"
+    tbConsole.btnStop.Text = "KILL"
     tbConsole.Timer1.Start()
     addTextToOutWindow(vbNewLine + "---------------------" + vbNewLine + "Command: " + cmd + vbNewLine, "blue")
     th.Start()
@@ -152,4 +175,4 @@ Module app_consoleRun
   End Sub
 
 
-End Module
+End Class

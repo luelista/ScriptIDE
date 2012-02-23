@@ -21,12 +21,10 @@
 
   <Path name="/Workspace/ContentViewers">
     <Class id="Default" mode="dockcontent" filefilter="*.*" class="ScriptIDE.Main.frmDC_scintilla" />
-
   </Path>
 
   <Path name="/Workspace/IndexList">
     <Class id="Default" filefilter="*.*" class="ScriptIDE.Main.idx_default" />
-
   </Path>
 
   <Path name="/Workspace/Toolbars/FileToolbar">
@@ -144,7 +142,6 @@
 
     <Command id="Window.ShowLocalBrowser" text="Local Directories" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/shell32_235-16.png" />
     <Command id="Window.ShowFTPBrowser" text="FTP Browser" kind="Button" icon="http://mw.teamwiki.net/docs/img/win-icons/iexplore_32542-16.png" />
-
   </Path>
 
   <Path name="/Workspace/ProtocolHandlers">
