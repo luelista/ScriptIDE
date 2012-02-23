@@ -73,6 +73,43 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua511", "luainterface\lua-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuaInterface", "luainterface\src\LuaInterface\LuaInterface.csproj", "{F55CABBB-4108-4A39-94E1-581FD46DC021}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lua511_Files", "Lua511_Files", "{59D168D6-93BC-407E-ADB4-59448691A02E}"
+	ProjectSection(SolutionItems) = preProject
+		luainterface\lua-5.1.4\src\lapi.c = luainterface\lua-5.1.4\src\lapi.c
+		luainterface\lua-5.1.4\src\lauxlib.c = luainterface\lua-5.1.4\src\lauxlib.c
+		luainterface\lua-5.1.4\src\lbaselib.c = luainterface\lua-5.1.4\src\lbaselib.c
+		luainterface\lua-5.1.4\src\lcode.c = luainterface\lua-5.1.4\src\lcode.c
+		luainterface\lua-5.1.4\src\ldblib.c = luainterface\lua-5.1.4\src\ldblib.c
+		luainterface\lua-5.1.4\src\ldebug.c = luainterface\lua-5.1.4\src\ldebug.c
+		luainterface\lua-5.1.4\src\ldo.c = luainterface\lua-5.1.4\src\ldo.c
+		luainterface\lua-5.1.4\src\ldump.c = luainterface\lua-5.1.4\src\ldump.c
+		luainterface\lua-5.1.4\src\lfunc.c = luainterface\lua-5.1.4\src\lfunc.c
+		luainterface\lua-5.1.4\src\lgc.c = luainterface\lua-5.1.4\src\lgc.c
+		luainterface\lua-5.1.4\src\linit.c = luainterface\lua-5.1.4\src\linit.c
+		luainterface\lua-5.1.4\src\liolib.c = luainterface\lua-5.1.4\src\liolib.c
+		luainterface\lua-5.1.4\src\llex.c = luainterface\lua-5.1.4\src\llex.c
+		luainterface\lua-5.1.4\src\lmathlib.c = luainterface\lua-5.1.4\src\lmathlib.c
+		luainterface\lua-5.1.4\src\lmem.c = luainterface\lua-5.1.4\src\lmem.c
+		luainterface\lua-5.1.4\src\loadlib.c = luainterface\lua-5.1.4\src\loadlib.c
+		luainterface\lua-5.1.4\src\lobject.c = luainterface\lua-5.1.4\src\lobject.c
+		luainterface\lua-5.1.4\src\lopcodes.c = luainterface\lua-5.1.4\src\lopcodes.c
+		luainterface\lua-5.1.4\src\loslib.c = luainterface\lua-5.1.4\src\loslib.c
+		luainterface\lua-5.1.4\src\lparser.c = luainterface\lua-5.1.4\src\lparser.c
+		luainterface\lua-5.1.4\src\lstate.c = luainterface\lua-5.1.4\src\lstate.c
+		luainterface\lua-5.1.4\src\lstring.c = luainterface\lua-5.1.4\src\lstring.c
+		luainterface\lua-5.1.4\src\lstrlib.c = luainterface\lua-5.1.4\src\lstrlib.c
+		luainterface\lua-5.1.4\src\ltable.c = luainterface\lua-5.1.4\src\ltable.c
+		luainterface\lua-5.1.4\src\ltablib.c = luainterface\lua-5.1.4\src\ltablib.c
+		luainterface\lua-5.1.4\src\ltm.c = luainterface\lua-5.1.4\src\ltm.c
+		luainterface\lua-5.1.4\src\lua.c = luainterface\lua-5.1.4\src\lua.c
+		luainterface\lua-5.1.4\src\luac.c = luainterface\lua-5.1.4\src\luac.c
+		luainterface\lua-5.1.4\src\lualib.h = luainterface\lua-5.1.4\src\lualib.h
+		luainterface\lua-5.1.4\src\lundump.c = luainterface\lua-5.1.4\src\lundump.c
+		luainterface\lua-5.1.4\src\lvm.c = luainterface\lua-5.1.4\src\lvm.c
+		luainterface\lua-5.1.4\src\lzio.c = luainterface\lua-5.1.4\src\lzio.c
+		luainterface\lua-5.1.4\src\print.c = luainterface\lua-5.1.4\src\print.c
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 21
@@ -378,6 +415,7 @@ Global
 		{BD957896-BF55-4902-916E-A9EF58CAC25D} = {0F4C42D5-6027-41B3-A1A8-B41AA3EFCE47}
 		{0A82CC4C-9A27-461C-8DB0-A65AC6393748} = {0F4C42D5-6027-41B3-A1A8-B41AA3EFCE47}
 		{F55CABBB-4108-4A39-94E1-581FD46DC021} = {0F4C42D5-6027-41B3-A1A8-B41AA3EFCE47}
+		{59D168D6-93BC-407E-ADB4-59448691A02E} = {0F4C42D5-6027-41B3-A1A8-B41AA3EFCE47}
 		{172B9A42-E6BA-4E9D-A520-A5EBD1E3E698} = {D40B63A1-C110-40A8-814A-566AFB8CFF69}
 		{5005B139-AEE6-4CC0-8605-C15B9C67666D} = {D40B63A1-C110-40A8-814A-566AFB8CFF69}
 		{E433BACD-E0C4-4ECB-BF86-D795BD04E0C1} = {D40B63A1-C110-40A8-814A-566AFB8CFF69}
