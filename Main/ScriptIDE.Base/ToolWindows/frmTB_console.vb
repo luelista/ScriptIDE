@@ -36,8 +36,10 @@
   Private Sub btnZoomOnOff_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnZoomOnOff.Click
     If pnlRtfContainer.Top = 86 Then
       pnlRtfContainer.Top = 32
+      Label2.Hide()
     Else
       pnlRtfContainer.Top = 86
+      Label2.Show()
     End If
     pnlRtfContainer.Height = ClientRectangle.Height - pnlRtfContainer.Top - 4
   End Sub
@@ -50,23 +52,48 @@
     End If
   End Sub
 
-  Private Sub btnStart_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStart.Click
+  Sub updateButtons()
     If ConsoleRun.CurrentInstance Is Nothing Then
-      If ConsoleRun.CurrentInstance.consoleProcRunning() Then
-        Dim con As New ConsoleRun
-        con.rtf = New RichTextBox
-        con.rtf.Dock = DockStyle.Fill
-        pnlRtfContainer.Controls.Add(con.rtf)
-        con.runConsoleProgram(cmbCommand.Text, txtWorkDir.Text)
-        ConsoleRun.CurrentInstance = con
-        Return
-      End If
+      btnClear.Enabled = False
+      btnClose.Enabled = False
+      btnStop.Enabled = False
+    Else
+      btnClear.Enabled = True
+      btnClose.Enabled = True
+      btnStop.Enabled = ConsoleRun.CurrentInstance.consoleProcRunning
     End If
-    ConsoleRun.CurrentInstance.runConsoleProgram(cmbCommand.Text, txtWorkDir.Text)
+  End Sub
+
+  Sub RunCommand(ByVal cmd As String, ByVal wd As String)
+    cmbCommand.Text = cmd
+    txtWorkDir.Text = wd
+    OnRunCommand()
+  End Sub
+
+  Sub OnRunCommand()
+    If ConsoleRun.CurrentInstance IsNot Nothing AndAlso Not ConsoleRun.CurrentInstance.consoleProcRunning() Then
+      ConsoleRun.CurrentInstance.runConsoleProgram(cmbCommand.Text, txtWorkDir.Text)
+      Return
+    End If
+    Dim con As New ConsoleRun
+    con.rtf = New RichTextBox
+    con.rtf.Dock = DockStyle.Fill
+    pnlRtfContainer.Controls.Add(con.rtf)
+    con.runConsoleProgram(cmbCommand.Text, txtWorkDir.Text)
+    cmbCommand.Items.Add(con)
+    ConsoleRun.CurrentInstance = con
+  End Sub
+
+  Private Sub btnStart_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStart.Click
+    OnRunCommand
   End Sub
 
   Private Sub btnClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClose.Click
-    If ConsoleRun.CurrentInstance Is Nothing Then
+    If ConsoleRun.CurrentInstance IsNot Nothing Then
+      If ConsoleRun.CurrentInstance.consoleProcRunning Then
+        MsgBox("Unable to close running console. Please exit first.")
+        Exit Sub
+      End If
       pnlRtfContainer.Controls.Remove(ConsoleRun.CurrentInstance.rtf)
       cmbCommand.Items.Remove(ConsoleRun.CurrentInstance)
 
@@ -77,7 +104,8 @@
 
   Private Sub cmbCommand_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbCommand.SelectedIndexChanged
     If cmbCommand.SelectedItem IsNot Nothing Then
-      ConsoleRun.CurrentInstance.rtf.Hide()
+      If ConsoleRun.CurrentInstance IsNot Nothing AndAlso ConsoleRun.CurrentInstance.rtf IsNot Nothing Then _
+        ConsoleRun.CurrentInstance.rtf.Hide()
       ConsoleRun.CurrentInstance = cmbCommand.SelectedItem
       ConsoleRun.CurrentInstance.rtf.Show()
     End If

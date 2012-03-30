@@ -563,6 +563,11 @@ Public Class frmDC_scintilla
     If bwReadSave.IsBusy Then
       Beep() : Exit Sub
     End If
+
+    Dim cancel As Boolean = False
+    cls_IDEHelper.GetSingleton.OnDocumentBeforeSave(Hash, cancel)
+    If cancel Then Return
+
     pnlLoadIndicator.Show()
     bwReadSave.RunWorkerAsync(New String() {"save", Me.sc1.Text})
     'isBUSY = True
@@ -649,6 +654,8 @@ Public Class frmDC_scintilla
       'nach speichern
       sc1.Markers.DeleteAll(10) : sc1.Markers.DeleteAll(11) 'errors ausblenden
       If getActiveRTF() Is Me Then createIndexList()
+
+      cls_IDEHelper.GetSingleton.OnDocumentAfterSave(Hash)
     End If
     Dirty = False
     pnlLoadIndicator.Hide()
@@ -1180,4 +1187,7 @@ Public Class frmDC_scintilla
   End Sub
 
 
+  Private Sub frmDC_scintilla_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+  End Sub
 End Class

@@ -27,7 +27,7 @@
   Public Event CurrentIndexLineChanged(ByVal lineNr As Integer) Implements Core.IDockContentForm.CurrentIndexLineChanged
 
   Public Overrides Function GetPersistString() As String
-    Return "LuaGenericDockContent|##|" + Me.Hash
+    Return "GenericDockContent|##|" + Me.Hash
   End Function
 
   Protected m_Dirty As Boolean
@@ -125,11 +125,29 @@
 
   End Sub
 
-  Public Overridable Sub onRead() Implements Core.IDockContentForm.onRead
-    
+  ''' <summary>
+  ''' Override <see>Read</see> instead!
+  ''' </summary>
+  Public Sub onRead() Implements Core.IDockContentForm.onRead
+    Me.Read()
+  End Sub
+  Protected Overridable Sub Read()
+
   End Sub
 
-  Public Overridable Sub onSave() Implements Core.IDockContentForm.onSave
+  ''' <summary>
+  ''' Override <see>Save</see> instead!
+  ''' </summary>
+  Public Sub onSave() Implements Core.IDockContentForm.onSave
+    Dim cancel As Boolean = False
+    cls_IDEHelper.GetSingleton.OnDocumentBeforeSave(Hash, cancel)
+    If cancel Then Return
+
+    Me.Save()
+
+    cls_IDEHelper.GetSingleton.OnDocumentAfterSave(Hash)
+  End Sub
+  Protected Overridable Sub Save()
 
   End Sub
 

@@ -43,6 +43,9 @@
         'Dim fileSpec = sh.expandScriptClassName(args.Substring(0, abPos))
         'app_main.onNavigate(fileSpec + "?" + args.Substring(abPos + 1))
 
+      Case "FILE.NEW"
+
+
       Case "FILE.OPEN"
         Using ofd As New OpenFileDialog
           ofd.Title = "Datei öffnen ..."

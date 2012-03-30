@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("ScriptIDE.Base")> 
+<Assembly: AssemblyTitle("ScriptIDE Core")> 
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("ScriptIDE.Base")> 
+<Assembly: AssemblyProduct("ScriptIDE Core")> 
 <Assembly: AssemblyCopyright("Copyright © 2009-2012 Max Weller")> 
 <Assembly: AssemblyTrademark("")> 
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("4.2.0.0")> 
-<Assembly: AssemblyFileVersion("4.2.0.0")> 
+<Assembly: AssemblyVersion("4.4.0.0")> 
+<Assembly: AssemblyFileVersion("4.4.0.0")> 

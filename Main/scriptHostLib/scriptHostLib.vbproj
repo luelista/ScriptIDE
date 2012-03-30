@@ -72,8 +72,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\references\ScintillaNet.dll</HintPath>
     </Reference>
-    <Reference Include="ScriptIDE.Core, Version=4.2.0.0, Culture=neutral, processorArchitecture=x86" />
-    <Reference Include="ScriptIDE.ScriptWindowHelper, Version=4.2.0.0, Culture=neutral, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -310,6 +308,16 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScriptIDE.Core\ScriptIDE.Core.vbproj">
+      <Project>{7A976981-ED3E-403D-8968-8B0CCE38137B}</Project>
+      <Name>ScriptIDE.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScriptIDE.ScriptWindowHelper\ScriptIDE.ScriptWindowHelper.vbproj">
+      <Project>{6AB31434-4937-43F3-AF14-F3B0B21CA716}</Project>
+      <Name>ScriptIDE.ScriptWindowHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

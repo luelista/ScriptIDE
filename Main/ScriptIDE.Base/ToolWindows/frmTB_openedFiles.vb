@@ -45,6 +45,9 @@
         closeTab(IGrid1.Rows(e.RowIndex).Tag)
         createOpenedTabList()
 
+      Case Windows.Forms.MouseButtons.Middle
+        Dim idc As IDockContentForm = IGrid1.Rows(e.RowIndex).Tag
+        idc.Parameters("ColorBoxes") = "#ff0000,#00ff00"
     End Select
   End Sub
 
@@ -135,5 +138,18 @@ startOver:
     End If
   End Sub
 
+  Private Sub IGrid1_CustomDrawCellForeground(ByVal sender As Object, ByVal e As TenTec.Windows.iGridLib.iGCustomDrawCellEventArgs) Handles IGrid1.CustomDrawCellForeground
+    Dim idc As IDockContentForm = IGrid1.Rows(e.RowIndex).Tag
+    Dim bb As String = idc.Parameters("ColorBoxes")
+    If String.IsNullOrEmpty(bb) = False Then
+      Dim boxes() As String = Split(bb, ",")
+      For i = 0 To boxes.Length - 1
+        e.Graphics.FillRectangle(New SolidBrush(ColorTranslator.FromHtml(boxes(i))), IGrid1.Width - (i + 1) * 15, e.Bounds.Y + 1, 13, 13)
+      Next
+    End If
+    e.Graphics.DrawImage(imlIgrid.Images(IGrid1.Cells(e.RowIndex, 0).ImageIndex), 1, e.Bounds.Y)
+    e.Graphics.DrawString(IGrid1.Cells(e.RowIndex, 0).Value, IGrid1.Font, If(e.RowSelected, Brushes.White, Brushes.Black), 17, e.Bounds.Y + 1)
+
+  End Sub
 
 End Class

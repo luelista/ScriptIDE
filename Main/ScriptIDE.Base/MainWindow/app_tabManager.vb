@@ -1,7 +1,7 @@
 ﻿Module app_tabManager
 
-  Dim rtfControls As New Dictionary(Of String, Object)
-  Dim actRtfBox As Object
+  Private rtfControls As New Dictionary(Of String, Object)
+  Private actRtfBox As Object
 
   Sub saveAll()
     For Each frm In rtfControls
@@ -144,7 +144,7 @@
 
     rtfControls.Add(forceFTHandler2 + urlName.ToLower, hlp)
     hlp.url = urlName
-    hlp.Hash = forceFTHandler2 + urlName.ToLower
+    hlp.Hash = forceFTHandler2 + urlName '.ToLower --> DON'T! URLs might be case sensitive!!!
     hlp.Text = hlp.getViewFilename()
 
     'createGridLineForHelperObject(tbOpenedFiles.IGrid1, sName, hlp)
@@ -160,6 +160,7 @@
   End Function
 
   Sub renameTab(ByVal oldKey As String, ByVal newKey As String)
+    oldKey = LCase(oldKey) : newKey = LCase(newKey)
     Dim el As Object
     If rtfControls.ContainsKey(newKey) Or rtfControls.TryGetValue(oldKey, el) = False Then _
       TT.Write("Rename Tab failed", oldKey + "->" + newKey, "err") : Exit Sub

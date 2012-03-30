@@ -40,6 +40,7 @@ Partial Class frmTB_openedFiles
                 Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
     Me.IGrid1.AutoResizeCols = True
     Me.IGrid1.BackColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer))
+    IGColPattern1.CellStyle = Me.IGCellStyleDesign1
     IGColPattern1.Width = 171
     IGColPattern2.Visible = False
     IGColPattern2.Width = 0
@@ -49,6 +50,7 @@ Partial Class frmTB_openedFiles
     Me.IGrid1.DefaultRow.NormalCellHeight = 15
     Me.IGrid1.GridLines.Mode = TenTec.Windows.iGridLib.iGGridLinesMode.None
     Me.IGrid1.Header.AllowPress = False
+    Me.IGrid1.Header.Height = 19
     Me.IGrid1.Header.Visible = False
     Me.IGrid1.ImageList = Me.imlIgrid
     Me.IGrid1.Location = New System.Drawing.Point(0, 29)
@@ -60,6 +62,10 @@ Partial Class frmTB_openedFiles
     Me.IGrid1.SelCellsForeColorNoFocus = System.Drawing.SystemColors.HighlightText
     Me.IGrid1.Size = New System.Drawing.Size(175, 414)
     Me.IGrid1.TabIndex = 4
+    '
+    'IGCellStyleDesign1
+    '
+    Me.IGCellStyleDesign1.CustomDrawFlags = TenTec.Windows.iGridLib.iGCustomDrawFlags.Foreground
     '
     'imlIgrid
     '

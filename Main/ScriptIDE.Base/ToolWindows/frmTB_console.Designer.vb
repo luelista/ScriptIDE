@@ -148,6 +148,9 @@ Partial Class frmTB_console
     '
     'pnlRtfContainer
     '
+    Me.pnlRtfContainer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                Or System.Windows.Forms.AnchorStyles.Left) _
+                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
     Me.pnlRtfContainer.Location = New System.Drawing.Point(2, 86)
     Me.pnlRtfContainer.Name = "pnlRtfContainer"
     Me.pnlRtfContainer.Size = New System.Drawing.Size(786, 197)
@@ -155,6 +158,8 @@ Partial Class frmTB_console
     '
     'cmbCommand
     '
+    Me.cmbCommand.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
     Me.cmbCommand.FormattingEnabled = True
     Me.cmbCommand.Location = New System.Drawing.Point(169, 6)
     Me.cmbCommand.Name = "cmbCommand"

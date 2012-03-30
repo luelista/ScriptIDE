@@ -13,8 +13,8 @@
   ''' <param name="EventType">1=Start 2=Stop</param>
   Event ConsoleEvent(ByVal EventType As Integer, ByVal EventParam As Object)
   Function Console_GetProcess() As Process
-   Function Console_ProcRunning() As Boolean
-   Sub Console_Kill()
+  Function Console_ProcRunning() As Boolean
+  Sub Console_Kill()
 
   ReadOnly Property IsStartup() As Boolean
   ReadOnly Property DIZ() As String

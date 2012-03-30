@@ -200,12 +200,16 @@
   End Sub
 
   Public Sub onSave() Implements Core.IDockContentForm.onSave
+    Dim cancel As Boolean = False
+    cls_IDEHelper.GetSingleton.OnDocumentBeforeSave(Hash, cancel)
+    If cancel Then Return
     Dim func As LuaInterface.LuaFunction = dispatch("onRead")
     If func Is Nothing Then
       TT.Write("LuaGenericDockContent, functionTable", "onRead not found")
     Else
       func.Call()
     End If
+    cls_IDEHelper.GetSingleton.OnDocumentAfterSave(Hash)
   End Sub
 
 

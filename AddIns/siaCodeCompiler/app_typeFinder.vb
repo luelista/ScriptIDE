@@ -411,7 +411,7 @@ Module app_typeFinder
     End If
   End Sub 'DumpMethods
 
-  Function getMethodModifiers(ByVal mInfo As MethodInfo) As String
+  Function getMethodModifiers(ByVal mInfo As MethodBase) As String
     Dim modifiers As New StringBuilder()
     If mInfo.IsStatic Then
       modifiers.Append("Shared ") '("static ")
@@ -430,7 +430,7 @@ Module app_typeFinder
     End If
     Return modifiers.ToString
   End Function
-  Function getMethodParameters(ByVal mInfo As MethodInfo, ByVal longParas As Boolean, ByVal formatted As Boolean) As String
+  Function getMethodParameters(ByVal mInfo As MethodBase, ByVal longParas As Boolean, ByVal formatted As Boolean) As String
     Dim paraList = mInfo.GetParameters()
     Dim out(paraList.Length - 1) As String
     For i = 0 To paraList.Length - 1

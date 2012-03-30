@@ -298,23 +298,41 @@
   'TODO !!!
 
   Public Overloads Sub executeProgramInConsole(ByVal commandLine As String, Optional ByVal workDir As String = "") Implements IIDEHelper.executeProgramInConsole
-    'runConsoleProgram(commandLine, workDir)
+    tbConsole.RunCommand(commandLine, workDir)
   End Sub
   Public Overloads Sub executeProgramInConsole(ByVal commandLine As String, ByRef procInfo As Process, ByVal workDir As String) Implements IIDEHelper.executeProgramInConsole
-    'runConsoleProgram(commandLine, workDir)
-
-    'procInfo = consoleProcGetProcess()
+    tbConsole.RunCommand(commandLine, workDir)
+    Try
+      procInfo = ConsoleRun.CurrentInstance.consoleProcGetProcess()
+    Catch ex As Exception
+      TT.DumpException("Unable to fetch current process", ex, "warn")
+    End Try
   End Sub
 
   Function Console_GetProcess() As Process Implements IIDEHelper.Console_GetProcess
-    ' Return consoleProcGetProcess()
+    If ConsoleRun.CurrentInstance IsNot Nothing Then
+      Return ConsoleRun.CurrentInstance.consoleProcGetProcess
+    End If
   End Function
   Function Console_ProcRunning() As Boolean Implements IIDEHelper.Console_ProcRunning
-    ' Return consoleProcRunning()
+    If ConsoleRun.CurrentInstance IsNot Nothing Then
+      Return ConsoleRun.CurrentInstance.consoleProcRunning
+    End If
   End Function
   Sub Console_Kill() Implements IIDEHelper.Console_Kill
-    ' killConsoleProc()
+    If ConsoleRun.CurrentInstance IsNot Nothing Then
+      ConsoleRun.CurrentInstance.killConsoleProc()
+    End If
   End Sub
+  ReadOnly Property ConsoleInstances() As ConsoleRun()
+    Get
+      Dim items(tbConsole.cmbCommand.Items.Count) As ConsoleRun
+      For i = 0 To items.Length
+        items(i) = tbConsole.cmbCommand.Items(i)
+      Next
+      Return items
+    End Get
+  End Property
 
   Public Function getActiveTab() As Form Implements IIDEHelper.getActiveTab
     Return getActiveRTF()

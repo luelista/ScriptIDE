@@ -90,7 +90,10 @@
     If IdeHelper IsNot Nothing Then AddHandler IdeHelper.DocumentTabActivated, AddressOf ideHelper_DocumentTabActivated
     AddHandler ScriptHost.Instance.BreakModeChanged, AddressOf scriptHost_BreakModeChanged
 
-    SplitContainer2.Orientation = ParaService.Glob.para("frmTB_debug__SplitOrientation", "0")
+
+    Try
+      SplitContainer2.Orientation = ParaService.Glob.para("frmTB_debug__SplitOrientation", "0")
+    Catch : End Try
     'IGrid1.Rows.Count = 50
     'For i = 1 To 50
     '  IGrid1.Cells(i - 1, 0).Value = i

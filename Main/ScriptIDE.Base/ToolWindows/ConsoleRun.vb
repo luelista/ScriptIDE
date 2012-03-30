@@ -1,6 +1,6 @@
 ﻿Imports System.Threading
 
-Class ConsoleRun
+Public Class ConsoleRun
 
   Private Shared p_currentInstance As ConsoleRun
   Public Shared Property CurrentInstance() As ConsoleRun
@@ -9,8 +9,9 @@ Class ConsoleRun
     End Get
     Set(ByVal value As ConsoleRun)
       p_currentInstance = value
+      If value IsNot Nothing Then _
       p_currentInstance.rtf.BringToFront()
-
+      tbConsole.updateButtons()
     End Set
   End Property
 
@@ -27,7 +28,7 @@ Class ConsoleRun
   End Sub
 
   Public Overrides Function ToString() As String
-    Return console_cmd
+    Return console_cmd & If(String.IsNullOrEmpty(console_para), "", " " & console_para)
   End Function
 
   Function consoleProcGetProcess() As Process
@@ -127,9 +128,10 @@ Class ConsoleRun
   End Sub
 
   Sub finishedConsoleRun()
-    tbConsole.btnStop.Text = "Run"
-    tbConsole.Timer1.Stop()
-    tbConsole.btnStop.BackColor = Color.FromKnownColor(KnownColor.ButtonFace)
+    'tbConsole.btnStop.Text = "Run"
+    'tbConsole.Timer1.Stop()
+    'tbConsole.btnStop.BackColor = Color.FromKnownColor(KnownColor.ButtonFace)
+    tbConsole.updateButtons()
     cls_IDEHelper.GetSingleton.OnConsoleEvent(2, Nothing)
   End Sub
 
@@ -158,17 +160,18 @@ Class ConsoleRun
       paraStartPos = cmd.IndexOf(" ")
     End If
     If paraStartPos > -1 Then
-      console_para = cmd.Substring(paraStartPos + 1)
-      console_cmd = cmd.Substring(0, paraStartPos + 1)
+      If paraStartPos >= cmd.Length Then console_para = "" Else console_para = cmd.Substring(paraStartPos + 1)
+      console_cmd = cmd.Substring(0, paraStartPos)
     Else
       console_para = ""
-      console_cmd = cmd
+      console_cmd = """" & cmd & """"
     End If
     console_workDir = workDir
-    tbConsole.cmbCommand.Text = cmd
+    'tbConsole.cmbCommand.Text = cmd
     tbConsole.txtWorkDir.Text = workDir
-    tbConsole.btnStop.Text = "KILL"
-    tbConsole.Timer1.Start()
+    'tbConsole.btnStop.Text = "KILL"
+    'tbConsole.Timer1.Start()
+    tbConsole.updateButtons()
     addTextToOutWindow(vbNewLine + "---------------------" + vbNewLine + "Command: " + cmd + vbNewLine, "blue")
     th.Start()
 

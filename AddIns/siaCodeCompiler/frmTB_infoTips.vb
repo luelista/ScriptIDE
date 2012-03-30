@@ -177,11 +177,26 @@ Public Class frmTB_infoTips
     actType = typ
     zoomTypeInfo(actType)
 
+    Dim grpCtors = ListView1.Groups.Add("ctor", "Konstruktoren")
     Dim grpMethod = ListView1.Groups.Add("sub", "Methoden")
     Dim grpProps = ListView1.Groups.Add("prop", "Eigenschaften")
     Dim grpEvents = ListView1.Groups.Add("event", "Ereignisse")
     Dim grpFields = ListView1.Groups.Add("fields", "Öffentliche Felder")
-    Dim grpTypes = ListView1.Groups.Add("fields", "Typen")
+    Dim grpTypes = ListView1.Groups.Add("types", "Basisklassen und Interfaces")
+
+    Dim contructors() = typ.GetConstructors
+    For Each item In contructors
+      Dim mods = getMethodModifiers(item)
+      Dim paras = getMethodParameters(item, False, False)
+      
+      Dim lvi = ListView1.Items.Add(mods + item.Name + "(" + paras + ")", "function")
+
+      lvi.Group = grpCtors
+      lvi.Tag = item
+
+      lvi.ImageKey = "wizard"
+      lvi.SubItems.Add("-")
+    Next
 
     Dim methods() = typ.GetMethods
     For Each item In methods
@@ -243,8 +258,18 @@ Public Class frmTB_infoTips
       lvi.Group = grpTypes : lvi.SubItems.Add(base.FullName)
       lvi.Tag = base 'item.ToString + vbNewLine + item.EventHandlerType.ToString
       base = base.BaseType
+      lvi.ImageKey = "class"
       idx += 1
     End While
+
+    Dim ifaces() = typ.GetInterfaces
+    For Each item In ifaces
+      Dim lvi = ListView1.Items.Add(item.Name, "type")
+      lvi.Group = grpTypes : lvi.SubItems.Add(item.FullName)
+      lvi.Tag = item
+      lvi.ImageKey = "interface"
+    Next
+
     ListView1.Show()
   End Sub
 
@@ -408,6 +433,11 @@ Public Class frmTB_infoTips
       Dim item As MemberInfo = ListView1.SelectedItems(0).Tag
       out &= "<h1> " + item.Name + " </h1><br>"
       Select Case item.MemberType
+        Case MemberTypes.Constructor
+          Dim ctor As ConstructorInfo = item
+          out &= "<a>[+]</a> " + MethodToString(ctor)
+
+
         Case MemberTypes.Method
           Dim method As MethodInfo = item
           ' out &= Microsoft.VisualBasic.CompilerServices.Utils.MethodToString(method)

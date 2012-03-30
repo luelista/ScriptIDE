@@ -288,6 +288,8 @@ Public Class AddinInstance
     End Sub
     Public Sub Disconnect(ByVal removeMode As DisconnectMode, ByRef custom As Object) Implements IAddinConnect.Disconnect
       luaSpace.GetFunction("addin_disconnect").Call(removeMode, custom)
+      luaSpace.Close()
+      luaSpace = Nothing
     End Sub
     Public Function GetAddinWindow(ByVal PersistString As String) As System.Windows.Forms.Form Implements IAddinConnect.GetAddinWindow
       Return luaSpace.GetFunction("addin_getaddinwindow").Call(PersistString)(0)
