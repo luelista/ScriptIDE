@@ -41,13 +41,12 @@
         '  MAIN.tssl_Filename.Text = IGrid1.Rows(e.RowIndex).Key + "   " + IGrid1.Rows(e.RowIndex).Tag.getFileTag()
         onRowClicked(e.RowIndex)
 
-      Case MouseButtons.Right
+      Case MouseButtons.Right, Windows.Forms.MouseButtons.Middle
         closeTab(IGrid1.Rows(e.RowIndex).Tag)
         createOpenedTabList()
 
-      Case Windows.Forms.MouseButtons.Middle
-        Dim idc As IDockContentForm = IGrid1.Rows(e.RowIndex).Tag
-        idc.Parameters("ColorBoxes") = "#ff0000,#00ff00"
+        'Dim idc As IDockContentForm = IGrid1.Rows(e.RowIndex).Tag
+        'idc.Parameters("ColorBoxes") = "#ff0000,#00ff00"
     End Select
   End Sub
 
@@ -144,7 +143,7 @@ startOver:
     If String.IsNullOrEmpty(bb) = False Then
       Dim boxes() As String = Split(bb, ",")
       For i = 0 To boxes.Length - 1
-        e.Graphics.FillRectangle(New SolidBrush(ColorTranslator.FromHtml(boxes(i))), IGrid1.Width - (i + 1) * 15, e.Bounds.Y + 1, 13, 13)
+        e.Graphics.FillRectangle(New SolidBrush(ColorTranslator.FromHtml(boxes(i))), e.Bounds.Width - (i + 1) * 15, e.Bounds.Y + 1, 13, 13)
       Next
     End If
     e.Graphics.DrawImage(imlIgrid.Images(IGrid1.Cells(e.RowIndex, 0).ImageIndex), 1, e.Bounds.Y)
