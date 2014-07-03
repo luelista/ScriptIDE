@@ -595,7 +595,7 @@ End Class
     End If
   End Function
 
-  Public Function JoinIGridLine(ByVal line As TenTec.Windows.iGridLib.iGRow, Optional ByVal Delimiter As String = vbTab) As String Implements IScriptHelper.JoinIGridLine
+  Public Function JoinIGridLine(ByVal line As Object, Optional ByVal Delimiter As String = vbTab) As String Implements IScriptHelper.JoinIGridLine
     Dim max = line.Cells.Count - 1
     Dim out(max) As String
     For i As Integer = 0 To max
@@ -604,7 +604,7 @@ End Class
     Return Join(out, Delimiter)
   End Function
 
-  Public Sub SplitToIGridLine(ByVal line As TenTec.Windows.iGridLib.iGRow, ByVal input As String, Optional ByVal Delimiter As String = vbTab) Implements IScriptHelper.SplitToIGridLine
+  Public Sub SplitToIGridLine(ByVal line As Object, ByVal input As String, Optional ByVal Delimiter As String = vbTab) Implements IScriptHelper.SplitToIGridLine
     Dim max = line.Cells.Count - 1
     Dim out() = Split(input, Delimiter)
     ReDim Preserve out(max)
@@ -613,7 +613,7 @@ End Class
     Next
   End Sub
 
-  Public Sub Igrid_get(ByVal Grid As TenTec.Windows.iGridLib.iGrid, ByRef FileContent As String, Optional ByVal LineDelim As String = vbNewLine, Optional ByVal ColDelim As String = vbTab) Implements IScriptHelper.Igrid_get
+  Public Sub Igrid_get(ByVal Grid As Object, ByRef FileContent As String, Optional ByVal LineDelim As String = vbNewLine, Optional ByVal ColDelim As String = vbTab) Implements IScriptHelper.Igrid_get
     Dim max = Grid.Rows.Count - 1
     Dim out(max) As String
     For i As Integer = 0 To max
@@ -622,7 +622,7 @@ End Class
     FileContent = Join(out, LineDelim)
   End Sub
 
-  Public Sub Igrid_put(ByVal Grid As TenTec.Windows.iGridLib.iGrid, ByVal FileContent As String, Optional ByVal LineDelim As String = vbNewLine, Optional ByVal ColDelim As String = vbTab) Implements IScriptHelper.Igrid_put
+  Public Sub Igrid_put(ByVal Grid As Object, ByVal FileContent As String, Optional ByVal LineDelim As String = vbNewLine, Optional ByVal ColDelim As String = vbTab) Implements IScriptHelper.Igrid_put
     Dim out() = Split(FileContent, LineDelim)
     Grid.Rows.Clear()
     Grid.Rows.Count = out.Length

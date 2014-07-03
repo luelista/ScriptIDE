@@ -76,7 +76,7 @@
 				DataExecutionPrevention="0"
 				ImportLibrary="$(OutDir)\lua51.lib"
 				TargetMachine="1"
-				KeyFile="$(ProjectDir)Lua.snk"
+				KeyFile="$(ProjectDir)..\Lua.snk"
 			/>
 			<Tool
 				Name="VCALinkTool"

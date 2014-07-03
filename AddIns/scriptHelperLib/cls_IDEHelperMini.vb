@@ -202,6 +202,20 @@
 
     End Get
   End Property
+
+  Public Function Console_GetProcess() As System.Diagnostics.Process Implements Core.IIDEHelper.Console_GetProcess
+
+  End Function
+
+  Public Sub Console_Kill() Implements Core.IIDEHelper.Console_Kill
+
+  End Sub
+
+  Public Function Console_ProcRunning() As Boolean Implements Core.IIDEHelper.Console_ProcRunning
+
+  End Function
+
+  Public Event ConsoleEvent(ByVal EventType As Integer, ByVal EventParam As Object) Implements Core.IIDEHelper.ConsoleEvent
 End Class
 
 

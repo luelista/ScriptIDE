@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{8503937E-4512-49B8-B2A0-BBB58C2E35E0}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -421,6 +421,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow\frm_newFile.resx">
       <DependentUpon>frm_newFile.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow\frm_windowManager.resx">
       <DependentUpon>frm_windowManager.vb</DependentUpon>
@@ -631,6 +632,9 @@
     <None Include="Resources\explorer_252-32.png" />
     <None Include="Resources\VB6_1251-32.png" />
     <None Include="Resources\SHELL32_274-16.png" />
+    <Content Include="SciLexer.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="siaIDEMain.AddIn">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
