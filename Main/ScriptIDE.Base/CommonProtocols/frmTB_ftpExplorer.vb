@@ -36,7 +36,7 @@
       txtFtpCurDir.Text += getCurRow().Text + "/"
       fillFtpFilelist(activeFtpCon, txtFtpCurDir.Text)
     Else
-      onNavigate("ftp:/" + activeFtpCon + txtFtpCurDir.Text + getCurRow().Text)
+      onNavigate(activeFtpProto + activeFtpCon + txtFtpCurDir.Text + getCurRow().Text)
 
     End If
   End Sub
@@ -53,7 +53,7 @@
     'dat.SetData("FileDrop", New String() {e.Item.tag})
     Dim files(ListView1.SelectedItems.Count - 1) As String
     For i = 0 To files.Length - 1
-      files(i) = "ftp:/" + activeFtpCon + ParaService.FP_unix(txtFtpCurDir.Text, ListView1.SelectedItems(i).Text)
+      files(i) = activeFtpProto + activeFtpCon + ParaService.FP_unix(txtFtpCurDir.Text, ListView1.SelectedItems(i).Text)
     Next
     dat.SetData("siURLDrop", files)
     dat.SetText(e.Item.tag)
@@ -192,7 +192,7 @@
     Else
       activeFtpCon = sender.text
       readBookmarks()
-      txtFtpCurDir.Text = "/"
+      txtFtpCurDir.Text = ParaService.Glob.para("frmTB_ftpExplorer__ftpCurDir__" + activeFtpCon, "/")
       tvwFolders.Nodes.Clear()
       fillFtpFilelist(activeFtpCon, txtFtpCurDir.Text)
     End If
@@ -265,7 +265,7 @@
     Dim filespec = ParaService.FP_unix(txtFtpCurDir.Text, newFileName)
     ftpSaveTextFile(activeFtpCon, filespec, "")
     fillFtpFilelist(activeFtpCon, txtFtpCurDir.Text)
-    If navigateAfter Then onNavigate("ftp:/" + activeFtpCon + filespec)
+    If navigateAfter Then onNavigate(activeFtpProto + activeFtpCon + filespec)
   End Sub
 
   Sub createNewFolder(ByVal newFolderName As String, ByVal navigateAfter As Boolean)
@@ -280,7 +280,7 @@
 
   Private Sub btnFtpUpload_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFtpUpload.Click, HochladenToolStripMenuItem.Click
     Using ofd As New OpenFileDialog
-      ofd.Title = "Datei hochladen nach ftp://" + activeFtpCon + txtFtpCurDir.Text + " ..."
+      ofd.Title = "Datei hochladen nach " + activeFtpProto + activeFtpCon + txtFtpCurDir.Text + " ..."
       ofd.Filter = "Alle Dateien|*.*"
       If ofd.ShowDialog = Windows.Forms.DialogResult.OK Then
         connectToServer(activeFtpCon)
@@ -346,9 +346,6 @@
     End If
   End Sub
 
-  Private Sub LinkLabel11_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs)
-    onNavigate("ftp:/teamwiki.net/httpdocs/.htaccess")
-  End Sub
 
   Private Sub ListView1_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles ListView1.DragEnter
     If e.Data.GetDataPresent("FileDrop") Then
@@ -472,7 +469,7 @@
 
 
   Private Sub btnNavFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNavFile.Click
-    Dim url = InputBox("Gib eine URL ein, die navigiert werden soll...", , ParaService.Glob.para("frmTB_ftpExplorer__lastUrlnav"))
+    Dim url = InputBox("Gib eine URL ein, die geöffnet werden soll...", , ParaService.Glob.para("frmTB_ftpExplorer__lastUrlnav"))
     If url = "" Then Exit Sub
     ParaService.Glob.para("frmTB_ftpExplorer__lastUrlnav") = url
     onNavigate(url)

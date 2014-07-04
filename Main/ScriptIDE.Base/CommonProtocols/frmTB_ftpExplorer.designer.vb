@@ -321,11 +321,12 @@ Partial Class frmTB_ftpExplorer
     '
     'btnNavFile
     '
-    Me.btnNavFile.Location = New System.Drawing.Point(291, 1)
+    Me.btnNavFile.Image = CType(resources.GetObject("btnNavFile.Image"), System.Drawing.Image)
+    Me.btnNavFile.Location = New System.Drawing.Point(266, 1)
     Me.btnNavFile.Name = "btnNavFile"
-    Me.btnNavFile.Size = New System.Drawing.Size(33, 24)
+    Me.btnNavFile.Size = New System.Drawing.Size(23, 24)
     Me.btnNavFile.TabIndex = 17
-    Me.btnNavFile.Text = "go"
+    Me.ToolTip1.SetToolTip(Me.btnNavFile, "Gehe zu URL")
     Me.btnNavFile.UseVisualStyleBackColor = True
     '
     'tvwFolders
@@ -406,8 +407,8 @@ Partial Class frmTB_ftpExplorer
     Me.ClientSize = New System.Drawing.Size(304, 499)
     Me.Controls.Add(Me.chkUseFtpProxy)
     Me.Controls.Add(Me.chkShowTreeview)
-    Me.Controls.Add(Me.btnNavFile)
     Me.Controls.Add(Me.btnFtpRefresh)
+    Me.Controls.Add(Me.btnNavFile)
     Me.Controls.Add(Me.btnFtpUpload)
     Me.Controls.Add(Me.btnFtpDownload)
     Me.Controls.Add(Me.btnFtpUp)

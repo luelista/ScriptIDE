@@ -1,8 +1,18 @@
 ﻿Public Class ctl_options
   Implements IPropertyPage
 
-  Private Sub btnAddFtpCred_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAddFtpCred.Click
-    igFtpCred.Rows.Add()
+  Private Sub btnAddFtpCred_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAddSFtpCred.Click
+    With igFtpCred.Rows.Add()
+      .Cells(3).Value = "22"
+      .Cells(4).Value = "sftp"
+      .Cells(2).Value = Environ("APPDATA") + "\.ssh\id_rsa.pub"
+    End With
+  End Sub
+  Private Sub btnAddFtpCred_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAddFtpCred.Click
+    With igFtpCred.Rows.Add()
+      .Cells(3).Value = "21"
+      .Cells(4).Value = "ftp"
+    End With
   End Sub
 
   Private Sub btnDelFtpCred_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDelFtpCred.Click
@@ -53,5 +63,20 @@
     Catch ex As Exception
       MsgBox("Sound konnte nicht abgespielt werden.")
     End Try
+  End Sub
+
+  Private Sub btnSelPrivKey_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSelPrivKey.Click
+    If Not igFtpCred.SelectedRows.Count = 1 Then Return
+    Using ofd As New OpenFileDialog
+      ofd.Title = "Private key file auswählen..."
+
+      ofd.FileName = "id_rsa"
+      If Not String.IsNullOrEmpty(igFtpCred.CurRow.Cells(2).Value) Then ofd.FileName = igFtpCred.CurRow.Cells(2).Value
+
+      ofd.Filter = "Private Key Files (id_rsa, *.ppk)|id_rsa;id_dsa;*.ppk|Alle Dateien|*.*"
+      If ofd.ShowDialog = DialogResult.OK Then
+        igFtpCred.CurRow.Cells(2).Value = ofd.FileName
+      End If
+    End Using
   End Sub
 End Class

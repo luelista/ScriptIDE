@@ -147,6 +147,7 @@
   <Path name="/Workspace/ProtocolHandlers">
     <Class id="Local" protocol="loc:" class="ScriptIDE.Main.LocalFileHandler" />
     <Class id="FTP" protocol="ftp:" class="ScriptIDE.Main.FTPHandler" />
+    <Class id="SFTP" protocol="sftp:" class="ScriptIDE.Main.SFTPHandler" />
   </Path>
 
   <Path name="/Workspace/ToolWindows">
