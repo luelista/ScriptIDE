@@ -70,6 +70,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\references\Mono.Cecil.dll</HintPath>
     </Reference>
+    <Reference Include="Renci.SshNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\references\SSH.NET.2013.4.7\lib\net35\Renci.SshNet.dll</HintPath>
+    </Reference>
     <Reference Include="ScintillaNet, Version=2.2.3614.35512, Culture=neutral, PublicKeyToken=948d6c9751444115, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\references\ScintillaNet.dll</HintPath>
@@ -136,6 +140,7 @@
     <Compile Include="Commands\frm_selectCommand.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CommonProtocols\SFTPHandler.vb" />
     <Compile Include="LuaScripting\frmTB_luaInstances.Designer.vb">
       <DependentUpon>frmTB_luaInstances.vb</DependentUpon>
     </Compile>

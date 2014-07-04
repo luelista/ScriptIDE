@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("ScriptIDE Main Add-in")> 
-<Assembly: AssemblyCopyright("Copyright © 2009-2012 Max Weller")> 
+<Assembly: AssemblyCopyright("Copyright © 2009-2014 Max Weller")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(True)> 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("4.4.0.0")> 
-<Assembly: AssemblyFileVersion("4.4.0.0")> 
+<Assembly: AssemblyVersion("4.5.0.0")> 
+<Assembly: AssemblyFileVersion("4.5.0.0")> 
